@@ -23,11 +23,11 @@ public class MemberDAO {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			
-			String url = "jdbc:oracle:thin:@localhost:1521:xe";
+			String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
 			//jdbc:oracle:thin:@localhost:1521:xe
 			//project-db-stu.ddns.net:1524
-			String user = "hr";
-			String password = "hr";
+			String user = "campus_a_4_1025";
+			String password = "smhrd4";
 			
 			conn = DriverManager.getConnection(url, user, password);
 		} catch (Exception e) {
@@ -54,23 +54,24 @@ public class MemberDAO {
 	}
 	
 	//회원가입 기능(메소드)
-	public int join(String admin_id, String admin_pw, String admin_name, String admin_tel, String admin_email) {
+	public int join(String admin_id, String admin_pw, String admin_name, String admin_tel, String admin_email, String admin_job) {
 
 		//받아온 값을 db 테이블에 삽입
 		try {
-			
 			connection();
-			String sql = "insert into ADMIN_MEMBER (admin_no, admin_id, admin_pw, admin_name, admin_tel, admin_email) values (admin_seq.nextval,?,?,?,?,?)";
+			
+			
+			String sql = "insert into ADMIN_MEMBER (admin_no, admin_id, admin_pw, admin_name, admin_tel, admin_email, admin_job) values (admin_seq.nextval,?,?,?,?,?,?)";
+			
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, admin_id);
 			psmt.setString(2, admin_pw);
 			psmt.setString(3, admin_name);
 			psmt.setString(4, admin_tel);
 			psmt.setString(5, admin_email);
-			
-			// 관리자번호 자동부여? 
-			// 기기번호?
-			
+			psmt.setString(6, admin_job);
+			// psmt.setString(7, loc_no);
+				
 			cnt = psmt.executeUpdate();
 		
 		} catch (Exception e) {
@@ -95,12 +96,12 @@ public class MemberDAO {
 			
 			if(rs.next()) {
 				System.out.println("로그인 성공!");
-				String get_admin_id = rs.getString("admin_email");
+				String get_admin_id = rs.getString("admin_id");
 				String get_email = rs.getString("admin_email");
 				String get_tel = rs.getString("admin_tel");
 				String get_job = rs.getString("admin_job");
 				
-//				vo2 = new AdminMemberVO(get_admin_id,get_email, get_tel, get_job);
+				vo2 = new AdminMemberVO(get_admin_id,get_email, get_tel, get_job);
 						
 			}else {
 				System.out.println("로그인 실패!");
@@ -116,19 +117,21 @@ public class MemberDAO {
 	}
 	
 	//수정 메소드
-	public int update(String admin_pw, String admin_tel, String admin_name, String admin_job, String admin_email, String admin_id) {
+	public int update(String admin_pw, String admin_name, String admin_tel, String admin_email, String admin_job, String admin_id) {
 		try {
 			connection();
 			
-			String sql = "update ADMIN_MEMBER set admin_pw = ?, admin_tel=?, admin_name=? admin_job=? admin_email=? where admin_id=?";
+			String sql = "update ADMIN_MEMBER set admin_pw = ?, admin_name=?, admin_tel=?, admin_email=?, admin_job=? where admin_id=?";
 			psmt = conn.prepareStatement(sql);
 				
-			psmt.setNString(1, admin_pw);		
-			psmt.setNString(2, admin_tel);	
-			psmt.setNString(3, admin_name);	
-			psmt.setNString(4, admin_job);
-			psmt.setNString(5, admin_email);
-			psmt.setNString(6, admin_id);
+			psmt.setString(1, admin_pw);		
+			psmt.setString(2, admin_name);	
+			psmt.setString(3, admin_tel);
+			psmt.setString(4, admin_email);
+			psmt.setString(5, admin_job);
+			// psmt.setNString(6, loc_no);
+			// psmt.setNString(6, user_no);
+			psmt.setString(6, admin_id);
 			
 			cnt = psmt.executeUpdate();
 			

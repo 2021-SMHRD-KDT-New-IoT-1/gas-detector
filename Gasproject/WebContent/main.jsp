@@ -26,7 +26,7 @@
 						<% if(vo2==null){%>
 								<a href="#menu">로그인</a>
 							<%}else{ %>
-								<a href="selectMember.jsp">관리회원정보</a>
+								<a href="selectMember.jsp">관리회원목록</a>
 								<a href="update.jsp">개인정보수정</a>
 								<a href="logoutService">로그아웃</a>
 							<%} %>
@@ -56,6 +56,8 @@
 									<li><input name="admin_name" type="text" placeholder="이름를 입력하세요" ></li>
 									<li><input name="admin_tel" type="text" placeholder="전화번호를 입력하세요" ></li>
 									<li><input name="admin_email" type="text" placeholder="Email을 입력하세요" ></li>
+									<li><input name="admin_job" type="text" placeholder="소속을 입력하세요" ></li>
+									<!-- <li><input name="loc_no" type="text" placeholder="관리 지역번호를 입력하세요" ></li> -->
 									<li><input type="submit" value="Join Us" class="button fit"></li>
 								</form>
 						</ul>
@@ -85,7 +87,7 @@
 											<%}else{ %>
 												<a href="#"><%=vo2.getAdmin_email() %></a>
 											<%} %>
-											<!-- 로그인 한 사용자의 이메일을 출력하시오 -->
+											
 									</div>
 								</section>
 								<section>
@@ -98,7 +100,7 @@
 												<span><%=vo2.getAdmin_tel() %></span>	
 											<%} %>
 											
-											<!-- 로그인 한 사용자의 전화번호를 출력하시오 -->							
+																	
 									</div>
 								</section>
 								<section>
@@ -111,7 +113,7 @@
 												<span><%=vo2.getAdmin_job() %></span>
 											<%} %>		
 											
-											<!-- 로그인 한 사용자의 집주소를 출력하시오 -->
+											
 									</div>
 								</section>
 							</section>					

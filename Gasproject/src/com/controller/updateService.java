@@ -24,20 +24,21 @@ public class updateService extends HttpServlet {
 		String admin_id = vo2.getAdmin_id(); //현재 로그인한 사용자의 이메일
 		
 		//수정에 사용할 정보
-		String update_pw = request.getParameter("admin_pw");
-		String update_tel = request.getParameter("admin_tel");
-		String update_name = request.getParameter("admin_name");
-		String update_job = request.getParameter("admin_job");
-		String update_email = request.getParameter("admin_email");
-		
-				
+		String admin_pw = request.getParameter("admin_pw");
+		String admin_name = request.getParameter("admin_name");
+		String admin_tel = request.getParameter("admin_tel");
+		String admin_email = request.getParameter("admin_email");
+		String admin_job = request.getParameter("admin_job");
+		// String loc_no = request.getParameter("loc_no");
+		// String user_no = request.getParameter("user_no");
+					
 		MemberDAO dao = new MemberDAO();
-		int cnt = dao.update(update_pw, update_tel, update_name, update_job, update_email, admin_id);
+		int cnt = dao.update(admin_pw, admin_name, admin_tel, admin_email, admin_job, admin_id);
 		
 		if(cnt>0) {
 			System.out.println("수정 성공");
 			
-//			vo2 = new AdminMemberVO(update_pw, update_tel, update_name, update_job, update_email, admin_id);
+			vo2 = new AdminMemberVO(admin_pw, admin_name, admin_tel, admin_email, admin_job);
 			session.setAttribute("member", vo2); //수정한 값으로 업뎃
 			
 			response.sendRedirect("main.jsp");

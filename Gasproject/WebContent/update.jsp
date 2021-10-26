@@ -29,11 +29,13 @@
 									<%}else{ %>
 										<li>접속한 ID : <%=vo2.getAdmin_id() %></li>
 									<%} %>
-									<li><input name="update_pw" type="password" placeholder="PW를 입력하세요" style="width: 500px; margin: 0 auto;"></li>
-									<li><input name="update_tel" type="text"    placeholder="전화번호를 입력하세요" style="width: 500px; margin: 0 auto;"></li>
-									<li><input name="update_name" type="text"    placeholder="이름을 입력하세요" style="width: 500px; margin: 0 auto;"></li>
-									<li><input name="update_job" type="text"    placeholder="소속을 입력하세요" style="width: 500px; margin: 0 auto;"></li>
-									<li><input name="update_email" type="text"    placeholder="이메일을 입력하세요" style="width: 500px; margin: 0 auto;"></li>
+									<li><input name="admin_pw" type="password" placeholder="PW를 입력하세요" style="width: 500px; margin: 0 auto;"></li>
+									<li><input name="admin_name" type="text"    placeholder="이름을 입력하세요" style="width: 500px; margin: 0 auto;"></li>
+									<li><input name="admin_tel" type="text"    placeholder="전화번호를 입력하세요" style="width: 500px; margin: 0 auto;"></li>
+									<li><input name="admin_email" type="text"    placeholder="이메일을 입력하세요" style="width: 500px; margin: 0 auto;"></li>
+									<li><input name="admin_job" type="text"    placeholder="소속을 입력하세요" style="width: 500px; margin: 0 auto;"></li>
+									<!-- <li><input name="loc_no" type="text"    placeholder="관리 지역 번호를 입력하세요" style="width: 500px; margin: 0 auto;"></li> 
+									<li><input name="user_no" type="text"    placeholder="관리 사용자 번호를 입력하세요" style="width: 500px; margin: 0 auto;"></li> -->
 									<li><input type="submit" value="Update" class="button fit" style="width: 500px; margin: 0 auto;"></li>
 								</form>
 						</ul>
