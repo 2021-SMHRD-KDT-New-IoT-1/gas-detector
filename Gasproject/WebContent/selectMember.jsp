@@ -42,10 +42,10 @@
 						for(UserMemberVO vo : all){
 													%>
                          <tr>
-                          <td><%=vo.getName() %></td>
+                        <%--   <td><%=vo.getName() %></td>
                           <td><%=vo.getTel() %></td>
-                          <td><%=vo.getAddress()%></td>
-                          <td><a href="deleteService?machine_id=<%=vo.getMachine_id()%>" class='delete'>삭제</a></td>
+                          <td><%=vo.getAddress()%></td> --%>
+<%--                           <td><a href="deleteService?machine_id=<%=vo.getMachine_id()%>" class='delete'>삭제</a></td> --%>
                           <td><a href= "userupdate.jsp" class='delete'>수정</a></td>
                           <td><a href= "gasCheck.jsp" class='delete'>현황 확인</a></td>
                          </tr>
