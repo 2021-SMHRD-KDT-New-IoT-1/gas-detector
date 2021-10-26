@@ -1,3 +1,5 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.model.MemberDAO"%>
 <%@page import="com.model.localVO"%>
 <%@page import="com.model.AdminMemberVO"%>
 <%@page import="com.model.UserMemberVO"%>
@@ -15,6 +17,9 @@
 		<%
 			//현재 로그인 상태인지 확인 (vo == null > 로그인 하지 않은 상태)
 			AdminMemberVO vo2 = (AdminMemberVO)session.getAttribute("member");
+			MemberDAO dao = new MemberDAO();
+			ArrayList<localVO> locall = dao.localList();
+			
 		    		
 		%>
 		<!-- Wrapper -->
@@ -60,7 +65,14 @@
 									<li><input name="admin_tel" type="text" placeholder="전화번호를 입력하세요" ></li>
 									<li><input name="admin_email" type="text" placeholder="Email을 입력하세요" ></li>
 									<li><input name="admin_job" type="text" placeholder="소속을 입력하세요" ></li>
-								    <li><input name="loc_no" type="text" placeholder="관리 지역번호를 입력하세요" ></li> 
+								   <!--  <li><input name="loc_no" type="text" placeholder="관리 지역번호를 입력하세요" ></li>  -->
+								   <li>
+								 	<select name="loc_no">
+										<%for(localVO vo4 : locall){%>
+											<option name="loc"><%=vo4.getLoc_name()%>/<%=vo4.getLoc_no()%></option>
+										<%}%>
+									</select>
+								   </li>
 									<li><input type="submit" value="Join Us" class="button fit"></li>
 								</form>
 						</ul>
@@ -74,8 +86,7 @@
 									<h1>로그인해 주세요.</h1>
 								<%}else{%>
 									<h1>관리자, <%= vo2.getAdmin_id() %>님 환영합니다.</h1>
-									<h3><%= vo2.getAdmin_id() %>님이 관리하고 있는 지역 번호는 <%=vo2.getLoc_no() %>번 입니다.</h3>
-									
+									<h3><%= vo2.getAdmin_id() %>님이 관리하고 있는 지역은 <%out.print(dao.localName(vo2.getLoc_no()));%>입니다.</h3>
 								<%} %>
 																
 							</header>

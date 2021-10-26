@@ -30,10 +30,11 @@ public class JoinService extends HttpServlet {
 		String admin_job = request.getParameter("admin_job"); 
 		String loc_no = request.getParameter("loc_no");
 		 
-		
+		String result = loc_no.substring(loc_no.lastIndexOf("/")+1);
+		System.out.println(result);
 		
 		MemberDAO dao = new MemberDAO();
-		int cnt = dao.join(admin_id, admin_pw, admin_name, admin_tel, admin_email, admin_job, loc_no);
+		int cnt = dao.join(admin_id, admin_pw, admin_name, admin_tel, admin_email, admin_job, result);
 		
 		if(cnt>0) {
 			System.out.println("가입 성공");

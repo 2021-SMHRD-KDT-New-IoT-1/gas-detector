@@ -1,3 +1,6 @@
+<%@page import="com.model.localVO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.model.MemberDAO"%>
 <%@page import="com.model.AdminMemberVO"%>
 <%@page import="com.model.UserMemberVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
@@ -16,6 +19,8 @@
 	<body style="text-align: center;">
 	<%
 		AdminMemberVO vo2 = (AdminMemberVO)session.getAttribute("member");
+		MemberDAO dao = new MemberDAO();
+		ArrayList<localVO> locall = dao.localList();
 	%>
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -34,7 +39,13 @@
 									<li><input name="admin_tel" type="text"    placeholder="전화번호를 입력하세요" style="width: 500px; margin: 0 auto;"></li>
 									<li><input name="admin_email" type="text"    placeholder="이메일을 입력하세요" style="width: 500px; margin: 0 auto;"></li>
 									<li><input name="admin_job" type="text"    placeholder="소속을 입력하세요" style="width: 500px; margin: 0 auto;"></li>
-									<li><input name="loc_no" type="text"    placeholder="관리 지역 번호를 입력하세요" style="width: 500px; margin: 0 auto;"></li> 
+									<li>
+								 	<select name="loc_no" style="width: 500px; margin: 0 auto;">
+										<%for(localVO vo4 : locall){%>
+											<option name="loc"><%=vo4.getLoc_name()%>/<%=vo4.getLoc_no()%></option>
+										<%}%>
+									</select>
+								   </li> 
 									<li><input name="user_no" type="text"    placeholder="관리 사용자 번호를 입력하세요" style="width: 500px; margin: 0 auto;"></li>
 									<li><input type="submit" value="Update" class="button fit" style="width: 500px; margin: 0 auto;"></li>
 								</form>

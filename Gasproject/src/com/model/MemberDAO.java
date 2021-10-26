@@ -354,6 +354,48 @@ public class MemberDAO {
 		
 	}
 	
+	//지역명 불러오기
+	public String localName(String loc_no) {
+		String get_loc_name = "";
+		
+		try {
+			connection();
+			
+			String sql = "select loc_name from loc_tbl admin_member where ? = admin_member.loc_no";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, loc_no);
+						
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				System.out.println("회원정보 불러오기 성공!");
+				
+				get_loc_name = rs.getString("loc_name");
+			}	
+			
+		} catch (Exception e) {
+			System.out.println("지역명 가져오기 실패!");
+			e.printStackTrace();
+		}finally {
+			close();
+			}
+		return get_loc_name;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

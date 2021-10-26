@@ -53,16 +53,17 @@
                           <td><a href= "GasCheck.jsp" class='delete'>현황 확인</a></td>
                          </tr>
                         <%}%>
+                        
+                        </table>
+                     <table>
                      
-							
-						</table>
-						<table>
+                     
 							<form action="loginService">
-							<input type="submit" value="HOME" >
+							<input type="submit" value=" HOME " >
 							</form>
 							
 							<form action="userJoinService.jsp">
-							<input type="submit" value="ADD MEMBER" >
+							<input type="submit" value=" ADD MEMBER " >
 							</form>
 						</table>
 					</nav>			
