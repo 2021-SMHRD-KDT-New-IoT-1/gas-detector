@@ -1,3 +1,4 @@
+<%@page import="com.model.localVO"%>
 <%@page import="com.model.UserMemberVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.model.MemberDAO"%>
@@ -21,7 +22,7 @@
 	<body style="text-align: center;">
 		<%
 			MemberDAO dao = new MemberDAO();
-			ArrayList<UserMemberVO> all = dao.allMember();
+			ArrayList<localVO> locall = dao.localList();
 		%>
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -29,28 +30,19 @@
 					<nav id="Update">	
 						<table>
 							
-							<caption><h2>회원관리페이지</h2></caption>
+							<caption><h2>관리 지역 확인 페이지</h2></caption>
 						
 							<tr>
-								<td>회원번호</td>
-								<td>이름</td>
-								<td>연락처</td>
-								<td>주소</td>
-								<td>기기번호</td>						
+								<td>지역번호</td>
+								<td>지역이름</td>				
 							</tr>
 							
 						<%
-						for(UserMemberVO vo : all){
+						for(localVO vo4 : locall){
 													%>
                          <tr>
-                          <td><%=vo.getUser_no() %></td>
-                          <td><%=vo.getUser_name() %></td>
-                          <td><%=vo.getUser_tel() %></td> 
-                          <td><%=vo.getUser_add() %></td> 
-                          <td><%=vo.getUser_mid() %></td> 
-                          <td><a href="deleteService?machine_id=<%=vo.getUser_mid()%>" class='delete'>삭제</a></td> 
-                          <td><a href= "userupdate.jsp" class='delete'>수정</a></td>
-                          <td><a href= "GasCheck.jsp" class='delete'>현황 확인</a></td>
+                          <td><%=vo4.getLoc_no() %></td>
+                          <td><%=vo4.getLoc_name() %></td>
                          </tr>
                         <%}%>
                      
@@ -59,10 +51,6 @@
 						<table>
 							<form action="loginService">
 							<input type="submit" value="HOME" >
-							</form>
-							
-							<form action="userJoinService.jsp">
-							<input type="submit" value="ADD MEMBER" >
 							</form>
 						</table>
 					</nav>			

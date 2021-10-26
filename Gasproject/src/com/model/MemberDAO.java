@@ -18,6 +18,10 @@ public class MemberDAO {
 	UserMemberVO vo = null;
 	ArrayList<UserMemberVO> all = null;
 	AdminMemberVO vo2 = null;
+	ArrayList<GasVO> gasall = null;
+	GasVO vo3 = null;
+	localVO vo4 = null;
+	ArrayList<localVO> locall = null;
 		
 	public void connection() {
 		try {
@@ -54,14 +58,13 @@ public class MemberDAO {
 	}
 	
 	//회원가입 기능(메소드)
-	public int join(String admin_id, String admin_pw, String admin_name, String admin_tel, String admin_email, String admin_job) {
+	public int join(String admin_id, String admin_pw, String admin_name, String admin_tel, String admin_email, String admin_job, String loc_no) {
 
 		//받아온 값을 db 테이블에 삽입
 		try {
 			connection();
-			
-			
-			String sql = "insert into ADMIN_MEMBER (admin_no, admin_id, admin_pw, admin_name, admin_tel, admin_email, admin_job) values (admin_seq.nextval,?,?,?,?,?,?)";
+		
+			String sql = "insert into ADMIN_MEMBER (admin_no, admin_id, admin_pw, admin_name, admin_tel, admin_email, admin_job, loc_no) values (admin_seq.nextval,?,?,?,?,?,?,?)";
 			
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, admin_id);
@@ -70,7 +73,7 @@ public class MemberDAO {
 			psmt.setString(4, admin_tel);
 			psmt.setString(5, admin_email);
 			psmt.setString(6, admin_job);
-			// psmt.setString(7, loc_no);
+			psmt.setString(7, loc_no);
 				
 			cnt = psmt.executeUpdate();
 		
@@ -87,7 +90,7 @@ public class MemberDAO {
 		try {
 			connection();
 			
-			String sql = "select admin_id, admin_email, admin_tel, admin_job from ADMIN_MEMBER where admin_id=? and admin_pw=?";
+			String sql = "select admin_id, admin_email, admin_tel, admin_job, loc_no from ADMIN_MEMBER where admin_id=? and admin_pw=?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, admin_id);	
 			psmt.setString(2, admin_pw);		
@@ -100,8 +103,9 @@ public class MemberDAO {
 				String get_email = rs.getString("admin_email");
 				String get_tel = rs.getString("admin_tel");
 				String get_job = rs.getString("admin_job");
+				String get_loc_no= rs.getString("loc_no");
 				
-				vo2 = new AdminMemberVO(get_admin_id,get_email, get_tel, get_job);
+				vo2 = new AdminMemberVO(get_admin_id,get_email, get_tel, get_job, get_loc_no);
 						
 			}else {
 				System.out.println("로그인 실패!");
@@ -117,11 +121,11 @@ public class MemberDAO {
 	}
 	
 	//수정 메소드
-	public int update(String admin_pw, String admin_name, String admin_tel, String admin_email, String admin_job, String admin_id) {
+	public int update(String admin_pw, String admin_name, String admin_tel, String admin_email, String admin_job, String admin_id, String loc_no, String user_no) {
 		try {
 			connection();
 			
-			String sql = "update ADMIN_MEMBER set admin_pw = ?, admin_name=?, admin_tel=?, admin_email=?, admin_job=? where admin_id=?";
+			String sql = "update ADMIN_MEMBER set admin_pw = ?, admin_name=?, admin_tel=?, admin_email=?, admin_job=?, loc_no=?, user_no=? where admin_id=?";
 			psmt = conn.prepareStatement(sql);
 				
 			psmt.setString(1, admin_pw);		
@@ -129,9 +133,9 @@ public class MemberDAO {
 			psmt.setString(3, admin_tel);
 			psmt.setString(4, admin_email);
 			psmt.setString(5, admin_job);
-			// psmt.setNString(6, loc_no);
-			// psmt.setNString(6, user_no);
-			psmt.setString(6, admin_id);
+			psmt.setNString(6, loc_no);
+			psmt.setNString(7, user_no);
+			psmt.setString(8, admin_id);
 			
 			cnt = psmt.executeUpdate();
 			
@@ -152,7 +156,7 @@ public class MemberDAO {
 		try {
 			connection();
 			
-			String sql = "select user_name, user_tel, user_add from USER_MEMBER";
+			String sql = "select user_no, user_name, user_tel, user_add, user_mid from USER_MEMBER";
 			psmt = conn.prepareStatement(sql);
 						
 			rs = psmt.executeQuery();
@@ -160,11 +164,13 @@ public class MemberDAO {
 			while(rs.next()) {
 				System.out.println("회원정보 불러오기 성공!");
 				
+				String get_no = rs.getString("user_no");
 				String get_name = rs.getString("user_name");
 				String get_tel = rs.getString("user_tel");
 				String get_add = rs.getString("user_add");
+				String get_mid = rs.getString("user_mid");
 				
-				vo = new UserMemberVO(get_name, get_tel, get_add);
+				vo = new UserMemberVO(get_no, get_name, get_tel, get_add, get_mid);
 				all.add(vo);
 			}	
 			
@@ -229,13 +235,124 @@ public class MemberDAO {
 		return check;
 	}
 	
+	//사용자정보 수정 
+	public int userUpdate(String user_name, String user_tel, String user_add, String user_mid, String user_no) {
+		try {
+			connection();
+			
+			String sql = "update USER_MEMBER set user_name=?, user_tel=?, user_add=?, user_mid=? where user_no=?";
+			psmt = conn.prepareStatement(sql);
+				
+			psmt.setString(1, user_name);		
+			psmt.setString(2, user_tel);	
+			psmt.setString(3, user_add);
+			psmt.setString(4, user_mid);
+			psmt.setString(5, user_no);
+			
+			cnt = psmt.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("수정 실패!");
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return cnt;
+	}
 	
+	//사용자 추가 페이지
+	public int adduser(String user_no, String user_name, String user_tel, String user_add, String user_mid ) {
+		try {
+			connection();
+			
+			String sql = "insert into USER_MEMBER values (?,?,?,?,?)";
+			
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, user_no);
+			psmt.setString(2, user_name);
+			psmt.setString(3, user_tel);
+			psmt.setString(4, user_add);
+			psmt.setString(5, user_mid);
+		
+			cnt = psmt.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("사용자 추가 실패!");
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return cnt;
+	}
 	
+	//가스 데이터 가져오기
+	public ArrayList<GasVO> gasData() {
+		gasall = new ArrayList<GasVO>();		
+		
+		try {
+			connection();
+			
+			String sql = "select manager_no, admin_no, user_no, user_mid, gas_level, dec_time from INTE_TBL";
+			psmt = conn.prepareStatement(sql);
+						
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				System.out.println("회원정보 불러오기 성공!");
+				
+				String get_manager_no = rs.getString("manager_no");
+				String get_admin_no = rs.getString("admin_no");
+				String get_user_no = rs.getString("user_no");
+				String get_user_mid = rs.getString("user_mid");
+				String get_gas_level = rs.getString("gas_level");
+				String get_dec_time = rs.getString("dec_time");
+				
+				vo3 = new GasVO(get_manager_no, get_admin_no, get_user_no, get_user_mid, get_gas_level, get_dec_time);
+				gasall.add(vo3);
+			}	
+			
+		} catch (Exception e) {
+			System.out.println("회원정보 불러오기 실패!");
+			e.printStackTrace();
+		}finally {
+			close();
+			}
+		return gasall;
+		
+	}
 	
-	
-	
-	
-	
+	//지역 확인 페이지
+	public ArrayList<localVO> localList() {
+		locall = new ArrayList<localVO>();		
+		
+		try {
+			connection();
+			
+			String sql = "select loc_no, loc_name from LOC_TBL";
+			psmt = conn.prepareStatement(sql);
+						
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				System.out.println("회원정보 불러오기 성공!");
+				
+				String get_loc_no = rs.getString("loc_no");
+				String get_loc_name = rs.getString("loc_name");
+				
+				
+				vo4 = new localVO(get_loc_no, get_loc_name);
+				locall.add(vo4);
+			}	
+			
+		} catch (Exception e) {
+			System.out.println("지역정보 불러오기 실패!");
+			e.printStackTrace();
+		}finally {
+			close();
+			}
+		return locall;
+		
+	}
 	
 	
 	

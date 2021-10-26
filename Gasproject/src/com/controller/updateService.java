@@ -29,16 +29,16 @@ public class updateService extends HttpServlet {
 		String admin_tel = request.getParameter("admin_tel");
 		String admin_email = request.getParameter("admin_email");
 		String admin_job = request.getParameter("admin_job");
-		// String loc_no = request.getParameter("loc_no");
-		// String user_no = request.getParameter("user_no");
+		String loc_no = request.getParameter("loc_no");
+		String user_no = request.getParameter("user_no");
 					
 		MemberDAO dao = new MemberDAO();
-		int cnt = dao.update(admin_pw, admin_name, admin_tel, admin_email, admin_job, admin_id);
+		int cnt = dao.update(admin_pw, admin_name, admin_tel, admin_email, admin_job, admin_id, loc_no, user_no);
 		
 		if(cnt>0) {
 			System.out.println("수정 성공");
 			
-			vo2 = new AdminMemberVO(admin_pw, admin_name, admin_tel, admin_email, admin_job);
+			vo2 = new AdminMemberVO(admin_id, admin_pw, admin_name, admin_tel, admin_email, admin_job, loc_no, user_no);
 			session.setAttribute("member", vo2); //수정한 값으로 업뎃
 			
 			response.sendRedirect("main.jsp");

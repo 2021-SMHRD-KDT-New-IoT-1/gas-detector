@@ -28,23 +28,26 @@ public class AdminMemberVO {
 
 	
 
-	public AdminMemberVO(String admin_id, String admin_tel, String admin_email, String admin_job) {
+	public AdminMemberVO(String admin_id, String admin_tel, String admin_email, String admin_job, String loc_no) {
 		super();
 		this.admin_id = admin_id;
 		this.admin_tel = admin_tel;
 		this.admin_email = admin_email;
 		this.admin_job = admin_job;
+		this.loc_no = loc_no;
 	}
 
 
-	public AdminMemberVO(String admin_pw, String admin_name, String admin_tel, String admin_email, String admin_job) {
+	public AdminMemberVO(String admin_id, String admin_pw, String admin_name, String admin_tel, String admin_email, String admin_job, String loc_no, String user_no) {
 		super();
-		
+		this.admin_id = admin_id;
 		this.admin_pw = admin_pw;
 		this.admin_name = admin_name;
 		this.admin_tel = admin_tel;
 		this.admin_email = admin_email;
 		this.admin_job = admin_job;
+		this.loc_no = loc_no;
+		this.user_no = user_no;
 	}
 
 	public String getAdmin_no() {

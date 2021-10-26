@@ -14,28 +14,19 @@
 	
 	</style>
 	<body style="text-align: center;">
-	<%
-		AdminMemberVO vo2 = (AdminMemberVO)session.getAttribute("member");
-	%>
+	
 		<!-- Wrapper -->
 			<div id="wrapper">
 				<!-- Menu -->
 					<nav id="Update">	
 						<ul class="actions vertical">
-							<li><h5>회원정보수정</h5></li>
-								<form action="updateService" method="post">
-									<% if(vo2==null){ %>
-										<li>로그인을해 주세요.</li>
-									<%}else{ %>
-										<li>접속한 ID : <%=vo2.getAdmin_id() %></li>
-									<%} %>
-									<li><input name="admin_pw" type="password" placeholder="PW를 입력하세요" style="width: 500px; margin: 0 auto;"></li>
-									<li><input name="admin_name" type="text"    placeholder="이름을 입력하세요" style="width: 500px; margin: 0 auto;"></li>
-									<li><input name="admin_tel" type="text"    placeholder="전화번호를 입력하세요" style="width: 500px; margin: 0 auto;"></li>
-									<li><input name="admin_email" type="text"    placeholder="이메일을 입력하세요" style="width: 500px; margin: 0 auto;"></li>
-									<li><input name="admin_job" type="text"    placeholder="소속을 입력하세요" style="width: 500px; margin: 0 auto;"></li>
-									<li><input name="loc_no" type="text"    placeholder="관리 지역 번호를 입력하세요" style="width: 500px; margin: 0 auto;"></li> 
-									<li><input name="user_no" type="text"    placeholder="관리 사용자 번호를 입력하세요" style="width: 500px; margin: 0 auto;"></li>
+							<li><h5>회원정보 추가</h5></li>
+								<form action="userJoinService" method="post">
+									<li><input name="user_no" type="password" placeholder="회원 번호를 입력하세요" style="width: 500px; margin: 0 auto;"></li>
+									<li><input name="user_name" type="text"    placeholder="회원이름을 입력하세요" style="width: 500px; margin: 0 auto;"></li>
+									<li><input name="user_tel" type="text"    placeholder="회원 전화번호를 입력하세요" style="width: 500px; margin: 0 auto;"></li>
+									<li><input name="user_add" type="text"    placeholder="회원의 주소를 입력하세요" style="width: 500px; margin: 0 auto;"></li>
+									<li><input name="user_mid" type="text"    placeholder="기기 번호을 입력하세요" style="width: 500px; margin: 0 auto;"></li>
 									<li><input type="submit" value="Update" class="button fit" style="width: 500px; margin: 0 auto;"></li>
 								</form>
 						</ul>

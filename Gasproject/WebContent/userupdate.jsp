@@ -23,12 +23,12 @@
 					<nav id="Update">	
 						<ul class="actions vertical">
 							<li><h5>사용자정보수정</h5></li>
-								<form action="updateService" method="post">
-									<li><input name="update_pw" type="password" placeholder="PW를 입력하세요" style="width: 500px; margin: 0 auto;"></li>
-									<li><input name="update_tel" type="text"    placeholder="전화번호를 입력하세요" style="width: 500px; margin: 0 auto;"></li>
-									<li><input name="update_name" type="text"    placeholder="이름을 입력하세요" style="width: 500px; margin: 0 auto;"></li>
-									<li><input name="update_job" type="text"    placeholder="소속을 입력하세요" style="width: 500px; margin: 0 auto;"></li>
-									<li><input name="update_email" type="text"    placeholder="이메일을 입력하세요" style="width: 500px; margin: 0 auto;"></li>
+								<form action="userUpdateService" method="post">
+									<li><input name="user_no" type="text" placeholder="수정할 회원의 회원번호를 입력해주세요" style="width: 500px; margin: 0 auto;"></li>
+									<li><input name="user_name" type="text" placeholder="이름을입력하세요" style="width: 500px; margin: 0 auto;"></li>
+									<li><input name="user_tel" type="text"    placeholder="전화번호를 입력하세요" style="width: 500px; margin: 0 auto;"></li>
+									<li><input name="user_add" type="text"    placeholder="주소를 입력하세요" style="width: 500px; margin: 0 auto;"></li>
+									<li><input name="user_mid" type="text"    placeholder="기기번호를 입력하세요" style="width: 500px; margin: 0 auto;"></li>
 									<li><input type="submit" value="Update" class="button fit" style="width: 500px; margin: 0 auto;"></li>
 								</form>
 						</ul>

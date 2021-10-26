@@ -1,3 +1,4 @@
+<%@page import="com.model.localVO"%>
 <%@page import="com.model.AdminMemberVO"%>
 <%@page import="com.model.UserMemberVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>  
@@ -14,7 +15,7 @@
 		<%
 			//현재 로그인 상태인지 확인 (vo == null > 로그인 하지 않은 상태)
 			AdminMemberVO vo2 = (AdminMemberVO)session.getAttribute("member");
- 
+		    		
 		%>
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -26,9 +27,11 @@
 						<% if(vo2==null){%>
 								<a href="#menu">로그인</a>
 							<%}else{ %>
+								<a href="localList.jsp">관리지역목록</a>
 								<a href="selectMember.jsp">관리회원목록</a>
 								<a href="update.jsp">개인정보수정</a>
 								<a href="logoutService">로그아웃</a>
+								
 							<%} %>
 						
 							
@@ -38,7 +41,7 @@
 				<!-- Menu -->
 					<nav id="menu">	
 						<ul class="links">
-							<li><h5>로그인</h5></li>
+							<li><h5>로그인</h5></li> 
 								<form action="loginService" method="post">
 									<li><input name = "admin_id" type="text" placeholder="ID을 입력하세요"></li>
 									<li><input name = "admin_pw" type="password" placeholder="PW를 입력하세요"></li>
@@ -57,7 +60,7 @@
 									<li><input name="admin_tel" type="text" placeholder="전화번호를 입력하세요" ></li>
 									<li><input name="admin_email" type="text" placeholder="Email을 입력하세요" ></li>
 									<li><input name="admin_job" type="text" placeholder="소속을 입력하세요" ></li>
-									<!-- <li><input name="loc_no" type="text" placeholder="관리 지역번호를 입력하세요" ></li> -->
+								    <li><input name="loc_no" type="text" placeholder="관리 지역번호를 입력하세요" ></li> 
 									<li><input type="submit" value="Join Us" class="button fit"></li>
 								</form>
 						</ul>
@@ -70,12 +73,14 @@
 								<%if(vo2==null){ %>
 									<h1>로그인해 주세요.</h1>
 								<%}else{%>
-									<h1><%= vo2.getAdmin_id() %>님 환영합니다.</h1>
+									<h1>관리자, <%= vo2.getAdmin_id() %>님 환영합니다.</h1>
+									<h3><%= vo2.getAdmin_id() %>님이 관리하고 있는 지역 번호는 <%=vo2.getLoc_no() %>번 입니다.</h3>
+									
 								<%} %>
 																
 							</header>
 							<div class="content">
-								<p>아래는 지금까지 배운 웹 기술들입니다.<br></p> <!-- 들어간 문구 생각하기 -->
+								<p>가스 유출로 인한 위험으로부터 당신을 지켜드립니다.<br></p>
 								
 							<section class="split">
 								<section>
@@ -112,6 +117,7 @@
 											<%}else{ %>
 												<span><%=vo2.getAdmin_job() %></span>
 											<%} %>		
+											
 											
 											
 									</div>
