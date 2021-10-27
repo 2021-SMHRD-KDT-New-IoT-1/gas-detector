@@ -55,14 +55,12 @@
                         <%}%>
                         
                         </table>
-                     <table>
-                     
-                     
-							<form action="loginService">
+                     <table id="selectMemberButton">
+							<form action="loginService" id="selectMemberButton1">
 							<input type="submit" value=" HOME " >
 							</form>
 							
-							<form action="userJoinService.jsp">
+							<form action="userJoinService.jsp" id="selectMemberButton2">
 							<input type="submit" value=" ADD MEMBER " >
 							</form>
 						</table>

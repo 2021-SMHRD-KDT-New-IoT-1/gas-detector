@@ -26,15 +26,18 @@ public class userUpdateService extends HttpServlet {
 		String user_add = request.getParameter("user_add");
 		String user_mid = request.getParameter("user_mid");
 		
+		String result = user_no.substring(user_no.lastIndexOf("/")+1);
+		System.out.println(result);
+		
 		MemberDAO dao = new MemberDAO();
-		int cnt = dao.userUpdate(user_name, user_tel, user_add, user_mid, user_no);
+		int cnt = dao.userUpdate(user_name, user_tel, user_add, user_mid, result);
 		
 		if(cnt>0) {
 			
 			System.out.println("수정 성공");		
 			response.sendRedirect("selectMember.jsp");
 		}else {
-			System.out.println("수정 실패");
+			System.out.println("수정 실패..");
 			response.sendRedirect("selectMember.jsp");
 		}
 		
