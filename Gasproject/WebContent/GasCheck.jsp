@@ -22,7 +22,7 @@
 	<body style="text-align: center;">
 		<%
 			MemberDAO dao = new MemberDAO();
-			String user_no = request.getParameter("user_no");
+			String user_no = (String)session.getAttribute("user_no");
 			ArrayList<GasVO> gasall = dao.gascheck(user_no);
 		%>
 		<!-- Wrapper -->
