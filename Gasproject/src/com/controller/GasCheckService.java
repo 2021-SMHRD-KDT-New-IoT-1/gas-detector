@@ -1,12 +1,15 @@
 package com.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.model.GasVO;
 import com.model.MemberDAO;
 
 
@@ -20,9 +23,9 @@ public class GasCheckService extends HttpServlet {
 		
 		MemberDAO dao = new MemberDAO();
 		
-       int cnt = dao.gascheck(user_no);
+		ArrayList<GasVO> gasall = dao.gascheck(user_no);
 		
-		if(cnt>0) {
+		if(gasall!=null) {
 			System.out.println("현황불러오기 성공");
 			response.sendRedirect("GasCheck.jsp");
 		}else {

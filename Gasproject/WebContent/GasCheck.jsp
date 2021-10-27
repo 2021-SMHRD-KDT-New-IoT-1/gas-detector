@@ -22,7 +22,8 @@
 	<body style="text-align: center;">
 		<%
 			MemberDAO dao = new MemberDAO();
-			ArrayList<GasVO> gasall = dao.gasData();
+			String user_no = request.getParameter("user_no");
+			ArrayList<GasVO> gasall = dao.gascheck(user_no);
 		%>
 		<!-- Wrapper -->
 			<div id="wrapper">
