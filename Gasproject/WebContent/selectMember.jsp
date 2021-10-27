@@ -50,7 +50,7 @@
                           <td><%=vo.getUser_mid() %></td> 
                           <td><a href="deleteService?machine_id=<%=vo.getUser_mid()%>" class='delete'>삭제</a></td> 
                           <td><a href= "userupdate.jsp" class='delete'>수정</a></td>
-                          <td><a href= "GasCheck.jsp" class='delete'>현황 확인</a></td>
+                          <td><a href= "GasCheckService?user_no=<%=vo.getUser_no() %>" class='delete'>현황 확인</a></td>
                          </tr>
                         <%}%>
                         

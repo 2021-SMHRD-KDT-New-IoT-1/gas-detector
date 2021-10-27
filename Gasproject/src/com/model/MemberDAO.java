@@ -286,14 +286,15 @@ public class MemberDAO {
 	}
 	
 	//가스 데이터 가져오기
-	public ArrayList<GasVO> gasData() {
+	public ArrayList<GasVO> gasData(String user_no) {
 		gasall = new ArrayList<GasVO>();		
 		
 		try {
 			connection();
 			
-			String sql = "select manager_no, admin_no, user_no, user_mid, gas_level, dec_time from INTE_TBL";
+			String sql = "select manager_no, admin_no, user_no, user_mid, gas_level, dec_time from INTE_TBL where user_no=?";
 			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, user_no);
 						
 			rs = psmt.executeQuery();
 			
@@ -380,6 +381,25 @@ public class MemberDAO {
 			close();
 			}
 		return get_loc_name;
+	}
+	
+	public int gascheck(String user_no) {
+		try {
+			connection();
+
+			String sql = "select manager_no, admin_no, user_no, user_mid, gas_level, dec_time from INTE_TBL where user_no=?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, user_no);	
+			
+			cnt = psmt.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("현황 불러오기실패!");
+			e.printStackTrace();
+		}finally {
+			close();
+			}
+		return cnt;
 	}
 	
 	
