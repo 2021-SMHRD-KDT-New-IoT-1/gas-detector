@@ -286,15 +286,14 @@ public class MemberDAO {
 	}
 	
 	//가스 데이터 가져오기
-	public ArrayList<GasVO> gasData(String user_no) {
+	public ArrayList<GasVO> gasData() {
 		gasall = new ArrayList<GasVO>();		
 		
 		try {
 			connection();
 			
-			String sql = "select manager_no, admin_no, user_no, user_mid, gas_level, dec_time from INTE_TBL where user_no=?";
+			String sql = "select manager_no, admin_no, user_no, user_mid, gas_level, dec_time from INTE_TBL ";
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, user_no);
 						
 			rs = psmt.executeQuery();
 			
@@ -383,7 +382,9 @@ public class MemberDAO {
 		return get_loc_name;
 	}
 	
-	public int gascheck(String user_no) {
+	public ArrayList<GasVO> gascheck(String user_no) {
+		gasall = new ArrayList<GasVO>();
+		
 		try {
 			connection();
 
@@ -391,15 +392,30 @@ public class MemberDAO {
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, user_no);	
 			
-			cnt = psmt.executeUpdate();
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				System.out.println("현황 불러오기 성공!");
+				
+				String get_manager_no = rs.getString("manager_no");
+				String get_admin_no = rs.getString("admin_no");
+				String get_user_no = rs.getString("user_no");
+				String get_user_mid = rs.getString("user_mid");
+				String get_gas_level = rs.getString("gas_level");
+				String get_dec_time = rs.getString("dec_time");
+				
+				vo3 = new GasVO(get_manager_no, get_admin_no, get_user_no, get_user_mid, get_gas_level, get_dec_time);
+				gasall.add(vo3);
+			}	
 			
 		} catch (Exception e) {
-			System.out.println("현황 불러오기실패!");
+			System.out.println("회원정보 불러오기 실패!");
 			e.printStackTrace();
 		}finally {
 			close();
 			}
-		return cnt;
+		return gasall;
+		
 	}
 	
 	
