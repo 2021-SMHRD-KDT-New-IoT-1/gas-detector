@@ -1626,12 +1626,8 @@
 	}
 
 	body {
-<<<<<<< HEAD
-		background: #9AB9FF;
-=======
 		 /* background: #C0C0C0;  */
 		 background : radial-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8)), url(../../images/го╢э2.png);
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-IoT-1/gas-detector.git
 	}
 
 		body.is-loading *, body.is-loading *:before, body.is-loading *:after {
