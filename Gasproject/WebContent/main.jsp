@@ -90,10 +90,10 @@
 		<section id="banner" class="major">
 
 		<div class="inner">
-			<header class="major" style="font-family: serif;"> <%if(vo2==null){ %>
-			<h1 style="font-family: serif;">로그인해 주세요.</h1>
+			<header class="major" > <%if(vo2==null){ %>
+			<h1 >로그인해 주세요.</h1>
 			<%}else{%>
-			<h2 style="font-family: serif;">
+			<h2 >
 				관리자,
 				<%= vo2.getAdmin_id() %>님 환영합니다.
 				<br>

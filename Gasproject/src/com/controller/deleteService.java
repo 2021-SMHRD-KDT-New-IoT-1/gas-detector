@@ -17,6 +17,8 @@ public class deleteService extends HttpServlet {
 		
 		String user_no = request.getParameter("user_no");
 		
+		System.out.println(user_no);
+		
 		MemberDAO dao = new MemberDAO();
 		int cnt = dao.delete(user_no);
 		
