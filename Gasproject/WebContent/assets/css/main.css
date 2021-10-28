@@ -1648,7 +1648,7 @@
 	
 	body, input, textarea {
 		 color: #ffffff; 
-		font-family: "Source Sans Pro", Helvetica, sans-serif;
+		font-family: HSBombaram3.0_Regular;
 		font-size: 17pt;
 		font-weight: 300;
 		letter-spacing: 0.025em;
@@ -2012,7 +2012,7 @@
 		.select-wrapper:before {
 			-moz-osx-font-smoothing: grayscale;
 			-webkit-font-smoothing: antialiased;
-			font-family: FontAwesome;
+			font-family: HSBombaram3.0_Regular;
 			font-style: normal;
 			font-weight: normal;
 			text-transform: none !important;
@@ -2080,7 +2080,7 @@
 			input[type="radio"] + label:before {
 				-moz-osx-font-smoothing: grayscale;
 				-webkit-font-smoothing: antialiased;
-				font-family: FontAwesome;
+				font-family: HSBombaram3.0_Regular;
 				font-style: normal;
 				font-weight: normal;
 				text-transform: none !important;
@@ -2174,7 +2174,7 @@
 		.icon:before {
 			-moz-osx-font-smoothing: grayscale;
 			-webkit-font-smoothing: antialiased;
-			font-family: FontAwesome;
+			font-family: HSBombaram3.0_Regular;
 			font-style: normal;
 			font-weight: normal;
 			text-transform: none !important;

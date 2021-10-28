@@ -12,8 +12,9 @@
 <title>Forty by HTML5 UP</title>
 <meta charset="EUC-KR" />
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<link rel="stylesheet" href="assets/css/main.css" />
+<link rel="stylesheet" href="assets/css/main.css" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
 </head>
+
 <body>
 	<%
 			//현재 로그인 상태인지 확인 (vo == null > 로그인 하지 않은 상태)
@@ -75,12 +76,7 @@
 				<!--  <li><input name="loc_no" type="text" placeholder="관리 지역번호를 입력하세요" ></li>  -->
 				<li><select name="loc_no">
 						<%for(localVO vo4 : locall){%>
-						<option name="loc"><%=vo4.getLoc_name()%>/<%=vo4.getLoc_no()%></option>
-						<%}%>
-				</select></li>
-				<li><select name="user_no">
-						<%for(localVO vo4 : locall){%>
-						<option name="loc"><%=vo4.getLoc_name()%>/<%=vo4.getLoc_no()%></option>
+						<option name="loc" style="color:black;"><%=vo4.getLoc_name()%>/<%=vo4.getLoc_no()%></option>
 						<%}%>
 				</select></li>
 				<li><input type="submit" value="Join Us" class="button fit"></li>
@@ -94,10 +90,10 @@
 		<section id="banner" class="major">
 
 		<div class="inner">
-			<header class="major"> <%if(vo2==null){ %>
-			<h1>로그인해 주세요.</h1>
+			<header class="major" style="font-family: serif;"> <%if(vo2==null){ %>
+			<h1 style="font-family: serif;">로그인해 주세요.</h1>
 			<%}else{%>
-			<h2>
+			<h2 style="font-family: serif;">
 				관리자,
 				<%= vo2.getAdmin_id() %>님 환영합니다.
 				<br>
@@ -108,16 +104,17 @@
 			</header>
 			
 			<div>
-			<p>가스 유출로 인한 위험으로부터 당신을 지켜드립니다.</p>
+			<strong ><i class="fa fa-quote-left" aria-hidden="true"></i>   
+			  가스 유출로 인한 위험으로부터 당신을 지켜드립니다. 
+			<i class="fa fa-quote-right" aria-hidden="true"></i>  </strong>
 			</div>	 
 				
-				<br><br>
+				<br><br> 
 				 
-    <div class="content">
+    <div class="content" style="margin-left:-70px;">
 				<section class="split"> 
 				<div class="contact-method">
-					<span class="icon alt fa-envelope"> </span>
-					<h3>Email</h3>
+					<h3><i class="fa fa-envelope-o" aria-hidden="true"></i> Email</h3>
 					<%if(vo2==null){ %>
 					<a href="#"></a>
 					<%}else{ %>
@@ -128,8 +125,7 @@
 				</section> 
 				<section>
 				<div class="contact-method">
-					<span class="icon alt fa-phone"></span>
-					<h3>Phone</h3>
+					<h3><i class="fa fa-phone" aria-hidden="true"></i> Phone</h3>
 					<%if(vo2==null){ %>
 					<span></span>
 					<%}else{ %>
@@ -141,8 +137,8 @@
 				</section> 
 				<section>
 				<div class="contact-method">
-					<span class="icon alt fa-home"></span>
-					<h3>JOB</h3>
+					<h3><i class="fa fa-building-o" aria-hidden="true"></i> JOB</h3>
+					
 					<%if(vo2==null){ %>
 					<span></span>
 					<%}else{ %>
@@ -159,16 +155,11 @@
 		<footer id="footer">
 		<div class="inner">
 			<ul class="icons">
-				<li><a href="#" class="icon alt fa-twitter"><span
-						class="label">Twitter</span></a></li>
-				<li><a href="#" class="icon alt fa-facebook"><span
-						class="label">Facebook</span></a></li>
-				<li><a href="#" class="icon alt fa-instagram"><span
-						class="label">Instagram</span></a></li>
-				<li><a href="#" class="icon alt fa-github"><span
-						class="label">GitHub</span></a></li>
-				<li><a href="#" class="icon alt fa-linkedin"><span
-						class="label">LinkedIn</span></a></li>
+				<li><a href="#" ><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></li>
+				<li><a href="#" ><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a></li>
+				<li><a href="#" ><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+				<li><a href="#" ><i class="fa fa-github-alt" aria-hidden="true"></i> GitHub</a></li>
+				<li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i> LinkedIn</a></li>
 			</ul>
 			<ul class="copyright">
 				<li>&copy; Untitled</li>
