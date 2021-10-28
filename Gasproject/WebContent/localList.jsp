@@ -5,7 +5,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html style=" margin-left: 200px; margin-right: 200px;">
 	<head>
 		<title>Forty by HTML5 UP</title>
 		<meta charset="utf-8" />
@@ -19,20 +19,20 @@
 	<style>
 		
 	</style>
-	<body style="text-align: center; background:rgba(0,0,0,0.9)" >
+	<body style="text-align: center; background:rgba(0,0,0,0.9);" >
 		<%
 			MemberDAO dao = new MemberDAO();
 			ArrayList<localVO> locall = dao.localList();
 		%>
 		<!-- Wrapper -->
-			<div id="wrapper" >
+			<div id="wrapper"   >
 				<!-- Menu -->
 					<nav id="Update">	
 						<table >
 							
-							<caption><h2>관리 지역 확인 페이지</h2></caption>
+							<caption><h2>관리 지역 목록</h2></caption>
 						
-							<tr>
+							<tr >
 								<td>지역번호</td>
 								<td>지역이름</td>				
 							</tr>
@@ -49,9 +49,7 @@
 							
 						</table>
 						<table>
-							<form action="loginService">
-							<input type="submit" value="HOME" >
-							</form>
+							<input type="submit" value="HOME" onclick='window.location.href="main.jsp"'>
 						</table>
 					</nav>			
 			</div>

@@ -12,8 +12,9 @@
 <title>Forty by HTML5 UP</title>
 <meta charset="EUC-KR" />
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<link rel="stylesheet" href="assets/css/main.css" />
+<link rel="stylesheet" href="assets/css/main.css" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
 </head>
+
 <body>
 	<%
 			//현재 로그인 상태인지 확인 (vo == null > 로그인 하지 않은 상태)
@@ -30,9 +31,16 @@
 		<header id="header" class="alt"> 
 		<a href="main.jsp" class="logo"><strong>Gas</strong> <span>detector</span></a> 
 		<nav>
-		<% if(vo2==null){%> <a href="#menu">로그인</a> <%}else{ %> 
-		<a href="localList.jsp">관리지역목록</a> <a href="selectMember.jsp">관리회원목록</a>
-		<a href="update.jsp">개인정보수정</a> <a href="logoutService">로그아웃</a> <%} %>
+		<% if(vo2==null){%> 
+		<a href="#menu">로그인</a> 
+		<%}else{ %> 
+		
+		<a href="localList.jsp">관리지역목록</a> 
+		<a href="selectMember.jsp">관리회원목록</a>
+		<a href="update.jsp">개인정보수정</a>
+		<a href="logoutService">로그아웃</a> 
+		
+		<%} %>
 
 
 		</nav> 
@@ -68,12 +76,7 @@
 				<!--  <li><input name="loc_no" type="text" placeholder="관리 지역번호를 입력하세요" ></li>  -->
 				<li><select name="loc_no">
 						<%for(localVO vo4 : locall){%>
-						<option name="loc"><%=vo4.getLoc_name()%>/<%=vo4.getLoc_no()%></option>
-						<%}%>
-				</select></li>
-				<li><select name="user_no">
-						<%for(localVO vo4 : locall){%>
-						<option name="loc"><%=vo4.getLoc_name()%>/<%=vo4.getLoc_no()%></option>
+						<option name="loc" style="color:black;"><%=vo4.getLoc_name()%>/<%=vo4.getLoc_no()%></option>
 						<%}%>
 				</select></li>
 				<li><input type="submit" value="Join Us" class="button fit"></li>
@@ -87,27 +90,31 @@
 		<section id="banner" class="major">
 
 		<div class="inner">
-			<header class="major"> <%if(vo2==null){ %>
-			<h1>로그인해 주세요.</h1>
+			<header class="major" > <%if(vo2==null){ %>
+			<h1 >로그인해 주세요.</h1>
 			<%}else{%>
-			<h2>
+			<h2 >
 				관리자,
 				<%= vo2.getAdmin_id() %>님 환영합니다.
 				<br>
 			<%= vo2.getAdmin_id() %>님이 관리하고 있는 지역은
-				<%out.print(dao.localName(vo2.getLoc_no()));%>입니다.
+<%out.print(dao.localName(vo2.getLoc_no()));%>입니다.
 			</h2>
-			<%}%> </header>
-			<div class="content">
-				 <p>
-					가스 유출로 인한 위험으로부터 당신을 지켜드립니다.<br>
-				</p> 
+			<%}%> 
+			</header>
+			
+			<div>
+			<strong ><i class="fa fa-quote-left" aria-hidden="true"></i>   
+			  가스 유출로 인한 위험으로부터 당신을 지켜드립니다. 
+			<i class="fa fa-quote-right" aria-hidden="true"></i>  </strong>
+			</div>	 
+				
+				<br><br> 
 				 
-    
-				<section class="split"> <section>
+    <div class="content" style="margin-left:-70px;">
+				<section class="split"> 
 				<div class="contact-method">
-					<span class="icon alt fa-envelope"></span>
-					<h3>Email</h3>
+					<h3 style="font-family: serif;"><i class="fa fa-envelope-o" aria-hidden="true"></i> Email</h3>
 					<%if(vo2==null){ %>
 					<a href="#"></a>
 					<%}else{ %>
@@ -115,32 +122,32 @@
 					<%} %>
 
 				</div>
-				</section> <section>
+				</section> 
+				<section>
 				<div class="contact-method">
-					<span class="icon alt fa-phone"></span>
-					<h3>Phone</h3>
+					<h3 style="font-family: serif;"><i class="fa fa-phone" aria-hidden="true"></i> Phone</h3>
 					<%if(vo2==null){ %>
 					<span></span>
 					<%}else{ %>
-					<span><%=vo2.getAdmin_tel() %></span>
+					<span ><%=vo2.getAdmin_tel() %></span>
 					<%} %>
 
 
 				</div>
-				</section> <section>
+				</section> 
+				<section>
 				<div class="contact-method">
-					<span class="icon alt fa-home"></span>
-					<h3>JOB</h3>
+					<h3 style="font-family: serif;"><i class="fa fa-building-o" aria-hidden="true"></i> JOB</h3>
+					
 					<%if(vo2==null){ %>
 					<span></span>
 					<%}else{ %>
-					<span><%=vo2.getAdmin_job() %></span>
+					<span ><%=vo2.getAdmin_job() %></span>
 					<%} %>
 
-
-
 				</div>
-				</section> </section>
+				</section> 
+				
 			</div>
 		</section>
 
@@ -148,16 +155,11 @@
 		<footer id="footer">
 		<div class="inner">
 			<ul class="icons">
-				<li><a href="#" class="icon alt fa-twitter"><span
-						class="label">Twitter</span></a></li>
-				<li><a href="#" class="icon alt fa-facebook"><span
-						class="label">Facebook</span></a></li>
-				<li><a href="#" class="icon alt fa-instagram"><span
-						class="label">Instagram</span></a></li>
-				<li><a href="#" class="icon alt fa-github"><span
-						class="label">GitHub</span></a></li>
-				<li><a href="#" class="icon alt fa-linkedin"><span
-						class="label">LinkedIn</span></a></li>
+				<li><a href="#" ><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></li>
+				<li><a href="#" ><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a></li>
+				<li><a href="#" ><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+				<li><a href="#" ><i class="fa fa-github-alt" aria-hidden="true"></i> GitHub</a></li>
+				<li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i> LinkedIn</a></li>
 			</ul>
 			<ul class="copyright">
 				<li>&copy; Untitled</li>
