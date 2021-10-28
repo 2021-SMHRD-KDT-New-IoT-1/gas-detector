@@ -19,7 +19,7 @@
 	<style>
 		
 	</style>
-	<body style="text-align: center;">
+	<body style="text-align: center; background:rgba(0,0,0,0.9);">
 		<%
 			MemberDAO dao = new MemberDAO();
 			String user_no = (String)session.getAttribute("user_no");

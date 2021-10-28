@@ -121,11 +121,11 @@ public class MemberDAO {
 	}
 	
 	//수정 메소드
-	public int update(String admin_pw, String admin_name, String admin_tel, String admin_email, String admin_job, String admin_id, String loc_no, String user_no) {
+	public int update(String admin_pw, String admin_name, String admin_tel, String admin_email, String admin_job, String admin_id, String result) {
 		try {
 			connection();
 			
-			String sql = "update ADMIN_MEMBER set admin_pw = ?, admin_name=?, admin_tel=?, admin_email=?, admin_job=?, loc_no=?, user_no=? where admin_id=?";
+			String sql = "update ADMIN_MEMBER set admin_pw = ?, admin_name=?, admin_tel=?, admin_email=?, admin_job=?, loc_no=? where admin_id=?";
 			psmt = conn.prepareStatement(sql);
 				
 			psmt.setString(1, admin_pw);		
@@ -133,9 +133,9 @@ public class MemberDAO {
 			psmt.setString(3, admin_tel);
 			psmt.setString(4, admin_email);
 			psmt.setString(5, admin_job);
-			psmt.setNString(6, loc_no);
-			psmt.setNString(7, user_no);
-			psmt.setString(8, admin_id);
+			psmt.setString(6, result);
+			//psmt.setNString(7, user_no);
+			psmt.setString(7, admin_id);
 			
 			cnt = psmt.executeUpdate();
 			
@@ -189,7 +189,7 @@ public class MemberDAO {
 
 			String sql = "delete from USER_MEMBER where user_mid=?";
 			psmt = conn.prepareStatement(sql);
-			psmt.setNString(1, user_mid);	
+			psmt.setString(1, user_mid);	
 			
 			cnt = psmt.executeUpdate();
 			

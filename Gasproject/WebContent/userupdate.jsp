@@ -15,7 +15,7 @@
 	<style>
 	
 	</style>
-	<body style="text-align: center;">
+	<body style="text-align: center; background:rgba(0,0,0,0.9);">
 	<%
 		AdminMemberVO vo2 = (AdminMemberVO)session.getAttribute("member");
 		MemberDAO dao = new MemberDAO();

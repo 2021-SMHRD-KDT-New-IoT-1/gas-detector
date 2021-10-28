@@ -18,7 +18,7 @@
 	<style>
 		
 	</style>
-	<body style="text-align: center;">
+	<body style="text-align: center; background:rgba(0,0,0,0.9)">
 		<%
 			MemberDAO dao = new MemberDAO();
 			ArrayList<UserMemberVO> all = dao.allMember();
@@ -48,21 +48,21 @@
                           <td><%=vo.getUser_tel() %></td> 
                           <td><%=vo.getUser_add() %></td> 
                           <td><%=vo.getUser_mid() %></td> 
-                          <td><a href="deleteService?machine_id=<%=vo.getUser_mid()%>" class='delete'>삭제</a></td> 
+                          <td><a href="deleteService?user_mid=<%=vo.getUser_mid()%>" class='delete' >삭제</a></td> 
                           <td><a href= "userupdate.jsp" class='delete'>수정</a></td>
-                          <td><a href= "GasCheckService?user_no=<%=vo.getUser_no() %>" class='delete'>현황 확인</a></td>
+                          <td><a href= "GasCheckService?user_no=<%=vo.getUser_no() %>" class='delete' >현황 확인</a></td>
                          </tr>
                         <%}%>
                         
                         </table>
                      <table id="selectMemberButton">
-							<form action="loginService" id="selectMemberButton1">
-							<input type="submit" value=" HOME " >
-							</form>
+							<tr><form action="loginService" id="selectMemberButton1">
+							<input type="submit" value=" HOME " style="margin:20px;">
+							</form></tr>
 							
-							<form action="userJoinService.jsp" id="selectMemberButton2">
-							<input type="submit" value=" ADD MEMBER " >
-							</form>
+							<tr><form action="userJoin.jsp" id="selectMemberButton2">
+							<input type="submit" value=" ADD MEMBER " style="margin:20px;">
+							</form></tr>
 						</table>
 					</nav>			
 			</div>

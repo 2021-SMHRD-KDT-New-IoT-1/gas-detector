@@ -19,16 +19,16 @@
 	<style>
 		
 	</style>
-	<body style="text-align: center;">
+	<body style="text-align: center; background:rgba(0,0,0,0.9)" >
 		<%
 			MemberDAO dao = new MemberDAO();
 			ArrayList<localVO> locall = dao.localList();
 		%>
 		<!-- Wrapper -->
-			<div id="wrapper">
+			<div id="wrapper" >
 				<!-- Menu -->
 					<nav id="Update">	
-						<table>
+						<table >
 							
 							<caption><h2>관리 지역 확인 페이지</h2></caption>
 						

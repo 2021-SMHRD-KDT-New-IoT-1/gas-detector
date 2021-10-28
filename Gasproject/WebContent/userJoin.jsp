@@ -13,7 +13,7 @@
 	<style>
 	
 	</style>
-	<body style="text-align: center;">
+	<body style="text-align: center; background:rgba(0,0,0,0.9)">
 	
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -22,7 +22,7 @@
 						<ul class="actions vertical">
 							<li><h5>회원정보 추가</h5></li>
 								<form action="userJoinService" method="post">
-									<li><input name="user_no" type="password" placeholder="회원 번호를 입력하세요" style="width: 500px; margin: 0 auto;"></li>
+									<li><input name="user_no" type="text" placeholder="회원 번호를 입력하세요" style="width: 500px; margin: 0 auto;"></li>
 									<li><input name="user_name" type="text"    placeholder="회원이름을 입력하세요" style="width: 500px; margin: 0 auto;"></li>
 									<li><input name="user_tel" type="text"    placeholder="회원 전화번호를 입력하세요" style="width: 500px; margin: 0 auto;"></li>
 									<li><input name="user_add" type="text"    placeholder="회원의 주소를 입력하세요" style="width: 500px; margin: 0 auto;"></li>

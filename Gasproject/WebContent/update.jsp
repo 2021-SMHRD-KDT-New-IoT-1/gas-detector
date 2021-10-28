@@ -16,7 +16,7 @@
 	<style>
 	
 	</style>
-	<body style="text-align: center;">
+	<body style="text-align: center; background:rgba(0,0,0,0.9);">
 	<%
 		AdminMemberVO vo2 = (AdminMemberVO)session.getAttribute("member");
 		MemberDAO dao = new MemberDAO();
@@ -27,12 +27,12 @@
 				<!-- Menu -->
 					<nav id="Update">	
 						<ul class="actions vertical">
-							<li><h5>회원정보수정</h5></li>
+							<li><h4>관리자 정보수정</h4></li>
 								<form action="updateService" method="post">
 									<% if(vo2==null){ %>
 										<li>로그인을해 주세요.</li>
 									<%}else{ %>
-										<li>접속한 ID : <%=vo2.getAdmin_id() %></li>
+										<li><h5>접속한 ID : <%=vo2.getAdmin_id() %></h5></li>
 									<%} %>
 									<li><input name="admin_pw" type="password" placeholder="PW를 입력하세요" style="width: 500px; margin: 0 auto;"></li>
 									<li><input name="admin_name" type="text"    placeholder="이름을 입력하세요" style="width: 500px; margin: 0 auto;"></li>
@@ -46,7 +46,7 @@
 										<%}%>
 									</select>
 								   </li> 
-									<li><input name="user_no" type="text"    placeholder="관리 사용자 번호를 입력하세요" style="width: 500px; margin: 0 auto;"></li>
+									<!-- <li><input name="user_no" type="text"    placeholder="관리 사용자 번호를 입력하세요" style="width: 500px; margin: 0 auto;"></li> -->
 									<li><input type="submit" value="Update" class="button fit" style="width: 500px; margin: 0 auto;"></li>
 								</form>
 						</ul>
