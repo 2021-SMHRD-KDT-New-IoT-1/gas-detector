@@ -12,7 +12,13 @@
 <title>Forty by HTML5 UP</title>
 <meta charset="EUC-KR" />
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<link rel="stylesheet" href="assets/css/main.css" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+<link rel="stylesheet" href="assets/css/main.css" 
+href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -35,10 +41,10 @@
 		<a href="#menu">로그인</a> 
 		<%}else{ %> 
 		
-		<a href="localList.jsp">관리지역목록</a> 
-		<a href="selectMember.jsp">관리회원목록</a>
-		<a href="update.jsp">개인정보수정</a>
-		<a href="logoutService">로그아웃</a> 
+		<a href="localList.jsp" style="font-family: 'Jua', sans-serif;">관리지역목록</a> 
+		<a href="selectMember.jsp" style="font-family: 'Jua', sans-serif;">관리회원목록</a>
+		<a href="update.jsp" style="font-family: 'Jua', sans-serif;">개인정보수정</a>
+		<a href="logoutService" style="font-family: 'Jua', sans-serif;">로그아웃</a> 
 		
 		<%} %>
 
@@ -93,7 +99,7 @@
 			<header class="major" > <%if(vo2==null){ %>
 			<h1 >로그인해 주세요.</h1>
 			<%}else{%>
-			<h2 >
+			<h2 style="font-family: HSBombaram3_Regular;">
 				관리자,
 				<%= vo2.getAdmin_id() %>님 환영합니다.
 				<br>
