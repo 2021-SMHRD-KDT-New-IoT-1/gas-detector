@@ -183,13 +183,13 @@ public class MemberDAO {
 		return all;
 		}
 	
-	public int delete(String user_mid) {
+	public int delete(String user_no) {
 		try {
 			connection();
 
-			String sql = "delete from USER_MEMBER where user_mid=?";
+			String sql = "delete from USER_MEMBER where user_no=?";
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, user_mid);	
+			psmt.setString(1, user_no);	
 			
 			cnt = psmt.executeUpdate();
 			

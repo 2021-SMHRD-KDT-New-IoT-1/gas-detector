@@ -4,7 +4,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html style=" margin-left: 200px; margin-right: 200px;">
 	<head>
 		<title>Forty by HTML5 UP</title>
 		<meta charset="utf-8" />
@@ -29,14 +29,17 @@
 					<nav id="Update">	
 						<table>
 							
-							<caption><h2>회원관리페이지</h2></caption>
+							<caption><h2>사용자 확인&관리 페이지</h2></caption>
 						
 							<tr>
 								<td>회원번호</td>
 								<td>이름</td>
 								<td>연락처</td>
 								<td>주소</td>
-								<td>기기번호</td>						
+								<td >기기번호</td>
+								<td></td>
+								<td></td>
+								<td></td>						
 							</tr>
 							
 						<%
@@ -48,19 +51,19 @@
                           <td><%=vo.getUser_tel() %></td> 
                           <td><%=vo.getUser_add() %></td> 
                           <td><%=vo.getUser_mid() %></td> 
-                          <td><a href="deleteService?user_mid=<%=vo.getUser_mid()%>" class='delete' >삭제</a></td> 
-                          <td><a href= "userupdate.jsp" class='delete'>수정</a></td>
-                          <td><a href= "GasCheckService?user_no=<%=vo.getUser_no() %>" class='delete' >현황 확인</a></td>
+                          <td><a href="deleteService?user_no=<%=vo.getUser_no()%>">삭제</a></td> 
+                          <td><a href= "userupdate.jsp">수정</a></td>
+                          <td><a href= "GasCheckService?user_no=<%=vo.getUser_no() %>">현황 확인</a></td>
                          </tr>
                         <%}%>
                         
                         </table>
-                     <table id="selectMemberButton">
-							<tr><form action="loginService" id="selectMemberButton1">
-							<input type="submit" value=" HOME " style="margin:20px;">
-							</form></tr>
+                     <table>
+							<tr>
+							<input type="submit" value=" HOME " style="margin:20px;" onclick='window.location.href="main.jsp"'>
+							</tr>
 							
-							<tr><form action="userJoin.jsp" id="selectMemberButton2">
+							<tr><form action="userJoin.jsp">
 							<input type="submit" value=" ADD MEMBER " style="margin:20px;">
 							</form></tr>
 						</table>

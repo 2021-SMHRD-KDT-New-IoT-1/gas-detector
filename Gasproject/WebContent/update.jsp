@@ -25,7 +25,7 @@
 		<!-- Wrapper -->
 			<div id="wrapper">
 				<!-- Menu -->
-					<nav id="Update">	
+					<nav id="Update" >	
 						<ul class="actions vertical">
 							<li><h4>관리자 정보수정</h4></li>
 								<form action="updateService" method="post">
@@ -42,12 +42,17 @@
 									<li>
 								 	<select name="loc_no" style="width: 500px; margin: 0 auto;">
 										<%for(localVO vo4 : locall){%>
-											<option name="loc"><%=vo4.getLoc_name()%>/<%=vo4.getLoc_no()%></option>
+											<option name="loc" style='color : black;'><%=vo4.getLoc_name()%>/<%=vo4.getLoc_no()%></option>
 										<%}%>
 									</select>
 								   </li> 
 									<!-- <li><input name="user_no" type="text"    placeholder="관리 사용자 번호를 입력하세요" style="width: 500px; margin: 0 auto;"></li> -->
-									<li><input type="submit" value="Update" class="button fit" style="width: 500px; margin: 0 auto;"></li>
+									<li>
+									<input type="submit" value="Update" class="button fit" style="width: 250px; margin: 10px;">
+									<input type="button" value="HOME" onclick='window.location.href="main.jsp"'>
+									</li>
+									
+									
 								</form>
 						</ul>
 					</nav>			

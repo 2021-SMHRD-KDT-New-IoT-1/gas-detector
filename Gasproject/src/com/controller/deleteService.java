@@ -15,10 +15,10 @@ public class deleteService extends HttpServlet {
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String user_mid = request.getParameter("user_mid");
+		String user_no = request.getParameter("user_no");
 		
 		MemberDAO dao = new MemberDAO();
-		int cnt = dao.delete(user_mid );
+		int cnt = dao.delete(user_no);
 		
 		if(cnt>0) {
 			System.out.println("삭제 성공");

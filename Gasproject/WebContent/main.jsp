@@ -30,9 +30,16 @@
 		<header id="header" class="alt"> 
 		<a href="main.jsp" class="logo"><strong>Gas</strong> <span>detector</span></a> 
 		<nav>
-		<% if(vo2==null){%> <a href="#menu">로그인</a> <%}else{ %> 
-		<a href="localList.jsp">관리지역목록</a> <a href="selectMember.jsp">관리회원목록</a>
-		<a href="update.jsp">개인정보수정</a> <a href="logoutService">로그아웃</a> <%} %>
+		<% if(vo2==null){%> 
+		<a href="#menu">로그인</a> 
+		<%}else{ %> 
+		
+		<a href="localList.jsp">관리지역목록</a> 
+		<a href="selectMember.jsp">관리회원목록</a>
+		<a href="update.jsp">개인정보수정</a>
+		<a href="logoutService">로그아웃</a> 
+		
+		<%} %>
 
 
 		</nav> 
@@ -95,18 +102,21 @@
 				<%= vo2.getAdmin_id() %>님 환영합니다.
 				<br>
 			<%= vo2.getAdmin_id() %>님이 관리하고 있는 지역은
-				<%out.print(dao.localName(vo2.getLoc_no()));%>입니다.
+<%out.print(dao.localName(vo2.getLoc_no()));%>입니다.
 			</h2>
-			<%}%> </header>
-			<div class="content">
-				 <p>
-					가스 유출로 인한 위험으로부터 당신을 지켜드립니다.<br>
-				</p> 
+			<%}%> 
+			</header>
+			
+			<div>
+			<p>가스 유출로 인한 위험으로부터 당신을 지켜드립니다.</p>
+			</div>	 
+				
+				<br><br>
 				 
-    
-				<section class="split"> <section>
+    <div class="content">
+				<section class="split"> 
 				<div class="contact-method">
-					<span class="icon alt fa-envelope"></span>
+					<span class="icon alt fa-envelope"> </span>
 					<h3>Email</h3>
 					<%if(vo2==null){ %>
 					<a href="#"></a>
@@ -115,7 +125,8 @@
 					<%} %>
 
 				</div>
-				</section> <section>
+				</section> 
+				<section>
 				<div class="contact-method">
 					<span class="icon alt fa-phone"></span>
 					<h3>Phone</h3>
@@ -127,7 +138,8 @@
 
 
 				</div>
-				</section> <section>
+				</section> 
+				<section>
 				<div class="contact-method">
 					<span class="icon alt fa-home"></span>
 					<h3>JOB</h3>
@@ -137,10 +149,9 @@
 					<span><%=vo2.getAdmin_job() %></span>
 					<%} %>
 
-
-
 				</div>
-				</section> </section>
+				</section> 
+				
 			</div>
 		</section>
 
