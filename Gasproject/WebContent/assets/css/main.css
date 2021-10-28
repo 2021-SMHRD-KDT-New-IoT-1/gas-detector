@@ -2005,7 +2005,7 @@
 		}
 
 		.select-wrapper:before {
-			color: rgba(212, 212, 255, 0.1);
+			color: rgba(0, 0, 0, 0.6);
 			content: '\f078';
 			display: block;
 			height: 2.75em;

@@ -82,7 +82,7 @@
 			<%if(vo2==null){ %>
 				<h1>로그인해 주세요.</h1>
 			<%}else{%>
-			<h1>관리자, <%= vo2.getAdmin_id() %>님 환영합니다.</h1>
+			<h3>관리자, <%= vo2.getAdmin_id() %>님 환영합니다.</h3>
 			<h2><%= vo2.getAdmin_id() %>님이 관리하고 있는 지역은
 				<%out.print(dao.localName(vo2.getLoc_no()));%>입니다.
 			</h2>
@@ -150,7 +150,7 @@
 			</ul>
 			<ul class="copyright">
 				<li>&copy; Untitled</li>
-				<li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+				<li>Design: <a href="https://html5up.net">LIGHT HOOK</a></li>
 			</ul>
 		</div>
 		</footer>
