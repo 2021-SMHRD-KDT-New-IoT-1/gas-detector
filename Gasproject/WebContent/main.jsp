@@ -114,7 +114,7 @@
     <div class="content" style="margin-left:-70px;">
 				<section class="split"> 
 				<div class="contact-method">
-					<h3><i class="fa fa-envelope-o" aria-hidden="true"></i> Email</h3>
+					<h3 style="font-family: serif;"><i class="fa fa-envelope-o" aria-hidden="true"></i> Email</h3>
 					<%if(vo2==null){ %>
 					<a href="#"></a>
 					<%}else{ %>
@@ -125,11 +125,11 @@
 				</section> 
 				<section>
 				<div class="contact-method">
-					<h3><i class="fa fa-phone" aria-hidden="true"></i> Phone</h3>
+					<h3 style="font-family: serif;"><i class="fa fa-phone" aria-hidden="true"></i> Phone</h3>
 					<%if(vo2==null){ %>
 					<span></span>
 					<%}else{ %>
-					<span><%=vo2.getAdmin_tel() %></span>
+					<span ><%=vo2.getAdmin_tel() %></span>
 					<%} %>
 
 
@@ -137,12 +137,12 @@
 				</section> 
 				<section>
 				<div class="contact-method">
-					<h3><i class="fa fa-building-o" aria-hidden="true"></i> JOB</h3>
+					<h3 style="font-family: serif;"><i class="fa fa-building-o" aria-hidden="true"></i> JOB</h3>
 					
 					<%if(vo2==null){ %>
 					<span></span>
 					<%}else{ %>
-					<span><%=vo2.getAdmin_job() %></span>
+					<span ><%=vo2.getAdmin_job() %></span>
 					<%} %>
 
 				</div>
