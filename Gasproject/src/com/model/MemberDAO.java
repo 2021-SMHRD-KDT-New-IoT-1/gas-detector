@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -23,7 +24,7 @@ public class MemberDAO {
 	localVO vo4 = null;
 	ArrayList<localVO> locall = null;
 	ArrayList<AdminMemberVO> adminall = null;
-		
+
 	public void connection() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -454,6 +455,33 @@ public class MemberDAO {
 		return adminall;
 		}
 	
+	public int InsertSensor(String gas_level ,String user_mid) {
+		SimpleDateFormat format1 = new SimpleDateFormat ( "yyyy-MM-dd HH:mm:ss");
+		String format_time1 = format1.format (System.currentTimeMillis());
+		System.out.println(user_mid);
+		System.out.println(gas_level);
+		try {
+			connection();
+			String sql = "insert into inte_tbl(manager_no, admin_no, user_no, user_mid,gas_level,dec_time)values (MGR_SEQ.nextval,(select admin_no from user_member where user_mid =?),(select user_no from user_member where user_mid =?),?,?,?)"; 
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, user_mid);
+			psmt.setString(2, user_mid);
+			psmt.setString(3, user_mid);
+			psmt.setString(4, gas_level);
+			psmt.setString(5, format_time1);
+			
+			cnt = psmt.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("관리자 목록 불러오기 실패!");
+			e.printStackTrace();
+		}finally {
+			close();
+			}
+		return cnt;
+		}
+		
+	}
 	
 	
 	
@@ -462,11 +490,3 @@ public class MemberDAO {
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-}
