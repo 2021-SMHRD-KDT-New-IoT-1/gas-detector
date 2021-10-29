@@ -33,7 +33,7 @@
 									<li><input name="user_add" type="text"    placeholder="회원의 주소를 입력하세요" style="width: 500px; margin: 0 auto; font-family: GmarketSansMedium;"></li>
 									<li><input name="user_mid" type="text"    placeholder="기기 번호을 입력하세요" style="width: 500px; margin: 0 auto; font-family: GmarketSansMedium;"></li>
 									<li>
-									<select name="admin_no" style="width: 500px; margin: 0 auto; ">
+									<select name="admin_no" style="width: 500px; margin: 0 auto; font-family: GmarketSansMedium;">
 										<%for(AdminMemberVO vo7 : adminall){%>
 											<option style="color:black; font-family: GmarketSansMedium;"><%=vo7.getAdmin_no()%>/<%=vo7.getAdmin_name()%></option>
 										<%}%>
