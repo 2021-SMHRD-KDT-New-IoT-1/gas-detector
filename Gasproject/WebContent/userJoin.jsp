@@ -39,7 +39,18 @@
 										<%}%>
 									</select>
 									</li>
-									<li><input type="submit" value="Update" class="button fit" style="width: 500px; margin: 0 auto;"></li>
+									
+									<table>
+									
+										<tr>
+										<input type="submit" value="Update" class="button fit" style="width: 300px; margin: 0 auto;">
+										</tr>
+										
+										<tr>
+										<input type="button" value=" BACK " style="margin:20px;" onclick='window.location.href="selectMember.jsp"'>
+										</tr>
+									</table>
+									
 								</form>
 						</ul>
 					</nav>			

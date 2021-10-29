@@ -36,8 +36,9 @@ public class AdminMemberVO {
 
 
 
-	public AdminMemberVO(String admin_id, String admin_tel, String admin_email, String admin_job, String loc_no) {
+	public AdminMemberVO(String admin_no, String admin_id, String admin_tel, String admin_email, String admin_job, String loc_no) {
 		super();
+		this.admin_no = admin_no;
 		this.admin_id = admin_id;
 		this.admin_tel = admin_tel;
 		this.admin_email = admin_email;

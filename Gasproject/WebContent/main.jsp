@@ -41,7 +41,8 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 		<%}else{ %> 
 		
 		<a href="localList.jsp" style="font-family: GmarketSansMedium;">관리지역목록</a> 
-		<a href="selectMember.jsp" style="font-family: GmarketSansMedium;">관리회원목록</a>
+		<a href="myMember.jsp" style="font-family: GmarketSansMedium;">관리사용자목록</a>
+		<a href="selectMember.jsp" style="font-family: GmarketSansMedium;">전체사용자목록</a>
 		<a href="update.jsp" style="font-family: GmarketSansMedium;">개인정보수정</a>
 		<a href="logoutService" style="font-family: GmarketSansMedium;">로그아웃</a> 
 		

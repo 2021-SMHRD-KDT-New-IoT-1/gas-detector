@@ -19,7 +19,7 @@
 	<%
 		AdminMemberVO vo2 = (AdminMemberVO)session.getAttribute("member");
 		MemberDAO dao = new MemberDAO();
-		ArrayList<UserMemberVO> userall = dao.allMember();
+		ArrayList<UserMemberVO> myMember = dao.myMember(vo2.getAdmin_no());
 		ArrayList<AdminMemberVO> adminall = dao.allAdmin();
 	%>
 		<!-- Wrapper -->
@@ -28,23 +28,23 @@
 					<nav id="Update" style="font-family: GmarketSansMedium;">	
 						<ul class="actions vertical">
 							<li><h5>사용자정보수정</h5></li>
-								<form action="userUpdateService" method="post">
+								<form action="myuserUpdateService" method="post">
 									<li>
-										<select name="user_no" style="width: 500px; margin: 0 auto; font-family: GmarketSansMedium;">
-										<%for(UserMemberVO vo5 : userall){%>
-											<option style="color:black; font-family: GmarketSansMedium;"><%=vo5.getUser_name()%>/<%=vo5.getUser_no()%></option>
+										<select name="user_no" style="width: 500px; margin: 0 auto;">
+										<%for(UserMemberVO vo5 : myMember){%>
+											<option style="color:black;"><%=vo5.getUser_name()%>/<%=vo5.getUser_no()%></option>
 										<%}%>
 									</select>
 									</li>
 									
-									<li><input name="user_name" type="text" placeholder="이름을입력하세요" style="width: 500px; margin: 0 auto; font-family: GmarketSansMedium;"></li>
-									<li><input name="user_tel" type="text"  placeholder="전화번호를 입력하세요" style="width: 500px; margin: 0 auto; font-family: GmarketSansMedium;"></li>
-									<li><input name="user_add" type="text"    placeholder="주소를 입력하세요" style="width: 500px; margin: 0 auto; font-family: GmarketSansMedium;"></li>
-									<li><input name="user_mid" type="text"    placeholder="기기번호를 입력하세요" style="width: 500px; margin: 0 auto; font-family: GmarketSansMedium;"></li>
+									<li><input name="user_name" type="text" placeholder="이름을입력하세요" style="width: 500px; margin: 0 auto;"></li>
+									<li><input name="user_tel" type="text"    placeholder="전화번호를 입력하세요" style="width: 500px; margin: 0 auto;"></li>
+									<li><input name="user_add" type="text"    placeholder="주소를 입력하세요" style="width: 500px; margin: 0 auto;"></li>
+									<li><input name="user_mid" type="text"    placeholder="기기번호를 입력하세요" style="width: 500px; margin: 0 auto;"></li>
 									<li>
-									<select name="admin_no" style="width: 500px; margin: 0 auto; font-family: GmarketSansMedium; ">
+									<select name="admin_no" style="width: 500px; margin: 0 auto; ">
 										<%for(AdminMemberVO vo6 : adminall){%>
-											<option style="color:black; font-family: GmarketSansMedium;"><%=vo6.getAdmin_no()%>/<%=vo6.getAdmin_name()%></option>
+											<option style="color:black;"><%=vo6.getAdmin_no()%>/<%=vo6.getAdmin_name()%></option>
 										<%}%>
 									</li>
 									<table>
@@ -54,7 +54,7 @@
 										</tr>
 										
 										<tr>
-										<input type="button" value=" BACK " style="margin:20px;" onclick='window.location.href="selectMember.jsp"'>
+										<input type="button" value=" BACK " style="margin:20px;" onclick='window.location.href="myMember.jsp"'>
 										</tr>
 									</table>
 									
