@@ -28,7 +28,7 @@
 		<!-- Wrapper -->
 			<div id="wrapper">
 				<!-- Menu -->
-					<nav id="Update">	
+					<nav id="Update" style="font-family: GmarketSansMedium;">	
 						<table>
 							
 							<caption><h2>가스 현황 확인 페이지</h2></caption>

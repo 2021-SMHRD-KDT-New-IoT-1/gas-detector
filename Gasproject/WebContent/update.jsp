@@ -25,10 +25,10 @@
 		<!-- Wrapper -->
 			<div id="wrapper">
 				<!-- Menu -->
-					<nav id="Update" >	
+					<nav id="Update" style="font-family: GmarketSansMedium;">	
 						<ul class="actions vertical">
 							<li><h4>관리자 정보수정</h4></li>
-								<form action="updateService" method="post">
+								<form action="updateService" method="post" >
 									<% if(vo2==null){ %>
 										<li>로그인을해 주세요.</li>
 									<%}else{ %>

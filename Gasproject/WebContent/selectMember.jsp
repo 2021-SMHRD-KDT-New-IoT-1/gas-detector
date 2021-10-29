@@ -26,7 +26,7 @@
 		<!-- Wrapper -->
 			<div id="wrapper">
 				<!-- Menu -->
-					<nav id="Update">	
+					<nav id="Update" style="font-family: GmarketSansMedium;">	
 						<table>
 							
 							<caption><h2>사용자 확인&관리 페이지</h2></caption>
