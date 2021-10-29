@@ -25,7 +25,7 @@
 		<!-- Wrapper -->
 			<div id="wrapper">
 				<!-- Menu -->
-					<nav id="Update">	
+					<nav id="Update" style="font-family: GmarketSansMedium;">	
 						<ul class="actions vertical">
 							<li><h5>사용자정보수정</h5></li>
 								<form action="userUpdateService" method="post">

@@ -23,7 +23,7 @@
 		<!-- Wrapper -->
 			<div id="wrapper">
 				<!-- Menu -->
-					<nav id="Update">	
+					<nav id="Update" style="font-family: GmarketSansMedium;">	
 						<ul class="actions vertical">
 							<li><h5>회원정보 추가</h5></li>
 								<form action="userJoinService" method="post">

@@ -17,8 +17,7 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -35,16 +34,16 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 
 		<!-- Header -->
 		<header id="header" class="alt"> 
-		<a href="main.jsp" class="logo"><strong>Gas</strong> <span>detector</span></a> 
+		<a href="main.jsp" class="logo" style="font-family: GmarketSansMedium;"><strong>Gas</strong> <span>detector</span></a> 
 		<nav>
 		<% if(vo2==null){%> 
-		<a href="#menu">로그인</a> 
+		<a href="#menu" style="font-family: GmarketSansMedium;">로그인</a> 
 		<%}else{ %> 
 		
-		<a href="localList.jsp" style="font-family: 'Jua', sans-serif;">관리지역목록</a> 
-		<a href="selectMember.jsp" style="font-family: 'Jua', sans-serif;">관리회원목록</a>
-		<a href="update.jsp" style="font-family: 'Jua', sans-serif;">개인정보수정</a>
-		<a href="logoutService" style="font-family: 'Jua', sans-serif;">로그아웃</a> 
+		<a href="localList.jsp" style="font-family: GmarketSansMedium;">관리지역목록</a> 
+		<a href="selectMember.jsp" style="font-family: GmarketSansMedium;">관리회원목록</a>
+		<a href="update.jsp" style="font-family: GmarketSansMedium;">개인정보수정</a>
+		<a href="logoutService" style="font-family: GmarketSansMedium;">로그아웃</a> 
 		
 		<%} %>
 
@@ -53,11 +52,11 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 		</header>
 
 		<!-- Menu -->
-		<nav id="menu">
+		<nav id="menu" style="font-family: GmarketSansMedium;">
 		<ul class="links">
 			<li><h5>로그인</h5></li>
-			<form action="loginService" method="post">
-				<li><input name="admin_id" type="text" placeholder="ID을 입력하세요"></li>
+			<form action="loginService" method="post" >
+				<li ><input name="admin_id" type="text" placeholder="ID을 입력하세요"></li>
 				<li><input name="admin_pw" type="password"
 					placeholder="PW를 입력하세요"></li>
 				<li><input type="submit" value="LogIn" class="button fit"></li>
@@ -97,9 +96,9 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 
 		<div class="inner">
 			<header class="major" > <%if(vo2==null){ %>
-			<h1 >로그인해 주세요.</h1>
+			<h1 style="font-family: GmarketSansMedium;">로그인해 주세요.</h1>
 			<%}else{%>
-			<h2 style="font-family: HSBombaram3_Regular;">
+			<h2 style="font-family: GmarketSansMedium;">
 				관리자,
 				<%= vo2.getAdmin_id() %>님 환영합니다.
 				<br>
@@ -110,7 +109,7 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 			</header>
 			
 			<div>
-			<strong ><i class="fa fa-quote-left" aria-hidden="true"></i>   
+			<strong font-family: 'Nanum Gothic Coding', monospace;><i class="fa fa-quote-left" aria-hidden="true"></i>   
 			  가스 유출로 인한 위험으로부터 당신을 지켜드립니다. 
 			<i class="fa fa-quote-right" aria-hidden="true"></i>  </strong>
 			</div>	 
@@ -120,7 +119,7 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
     <div class="content" style="margin-left:-70px;">
 				<section class="split"> 
 				<div class="contact-method">
-					<h3 style="font-family: serif;"><i class="fa fa-envelope-o" aria-hidden="true"></i> Email</h3>
+					<h3 style="font-family: GmarketSansMedium;"><i class="fa fa-envelope-o" aria-hidden="true"></i> Email</h3>
 					<%if(vo2==null){ %>
 					<a href="#"></a>
 					<%}else{ %>
@@ -131,7 +130,7 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 				</section> 
 				<section>
 				<div class="contact-method">
-					<h3 style="font-family: serif;"><i class="fa fa-phone" aria-hidden="true"></i> Phone</h3>
+					<h3 style="font-family: GmarketSansMedium;"><i class="fa fa-phone" aria-hidden="true"></i> Phone</h3>
 					<%if(vo2==null){ %>
 					<span></span>
 					<%}else{ %>
@@ -143,7 +142,7 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 				</section> 
 				<section>
 				<div class="contact-method">
-					<h3 style="font-family: serif;"><i class="fa fa-building-o" aria-hidden="true"></i> JOB</h3>
+					<h3 style="font-family: GmarketSansMedium;"><i class="fa fa-building-o" aria-hidden="true"></i> JOB</h3>
 					
 					<%if(vo2==null){ %>
 					<span></span>
@@ -159,7 +158,7 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 
 		<!-- Footer -->
 		<footer id="footer">
-		<div class="inner">
+		<div class="inner" style="font-family: GmarketSansMedium;">
 			<ul class="icons">
 				<li><a href="#" ><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></li>
 				<li><a href="#" ><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a></li>
@@ -167,7 +166,7 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 				<li><a href="#" ><i class="fa fa-github-alt" aria-hidden="true"></i> GitHub</a></li>
 				<li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i> LinkedIn</a></li>
 			</ul>
-			<ul class="copyright">
+			<ul class="copyright" style="font-family: GmarketSansMedium;">
 				<li>&copy; Untitled</li>
 				<li>Design: <a href="https://html5up.net">LIGHT HOOK</a></li>
 			</ul>

@@ -25,7 +25,7 @@
 		<!-- Wrapper -->
 			<div id="wrapper">
 				<!-- Menu -->
-					<nav id="Update">	
+					<nav id="Update" style="font-family: GmarketSansMedium;">	
 						<ul class="actions vertical">
 							<li><h1>환영합니다!</h1></li>
 							<li><%=admin_id %>님 회원가입을 축하합니다.</li>
