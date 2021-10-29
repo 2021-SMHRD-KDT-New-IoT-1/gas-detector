@@ -7,7 +7,12 @@
     font-weight: normal;
     font-style: normal;
 }
-
+@font-face {
+    font-family: 'InkLipquid';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/InkLipquid.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 /*
 	Forty by HTML5 UP
@@ -1637,7 +1642,7 @@
 
 	body {
 		 /* background: #C0C0C0;  */
-		 background : radial-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8)), url(../../images/하단2.png);
+		 background : radial-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8)), url(../../images/바탕화면.png);
 	}
 
 		body.is-loading *, body.is-loading *:before, body.is-loading *:after {
@@ -3640,8 +3645,8 @@
 			-webkit-pointer-events: none;
 			-ms-pointer-events: none;
 			pointer-events: none;
-			background : radial-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8)), url(../../images/배경3.png);
-			background-size: cover;
+			background : radial-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8)), url(../../images/배경321.png);
+			/* background-size: cover; */
 			background-repeat : no-repeat;
 			/* background-color: #ffffff; */
 			content: '';

@@ -107,10 +107,10 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 			<%}%> 
 			</header>
 			
-			<div>
-			<strong font-family: 'Nanum Gothic Coding', monospace;><i class="fa fa-quote-left" aria-hidden="true"></i>   
+			<div >
+			<p style="font-family: InkLipquid; font-size: 65px"><i class="fa fa-quote-left" aria-hidden="true"></i>   
 			  가스 유출로 인한 위험으로부터 당신을 지켜드립니다. 
-			<i class="fa fa-quote-right" aria-hidden="true"></i>  </strong>
+			<i class="fa fa-quote-right" aria-hidden="true"></i></p>
 			</div>	 
 				
 				<br><br> 
