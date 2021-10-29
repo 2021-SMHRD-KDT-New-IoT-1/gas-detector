@@ -41,8 +41,9 @@
 								<td>주소</td>
 								<td>기기번호</td>
 								<td>관리자번호</td>
-								<td>사용자삭제</td>
-								<td>CO</td>							
+								<td>CO</td>	
+								<td></td>
+														
 							</tr>
 							
 						<%
@@ -55,7 +56,6 @@
                           <td><%=vo.getUser_add() %></td> 
                           <td><%=vo.getUser_mid() %></td> 
                           <td><%=vo.getAdmin_no() %></td> 
-                          <td><a href="deleteService?user_mid=<%=vo.getUser_mid()%>">삭제</a></td> 
                           <td><a href= "GasCheckService?user_no=<%=vo.getUser_no() %>">현황 확인</a></td>
                         <%}%>
                         
@@ -65,13 +65,13 @@
 							<input type="button" value=" HOME " style="margin:20px;" onclick='window.location.href="main.jsp"'>
 							</tr>
 							
-							<tr><form action="userupdate.jsp">
+							<!-- <tr><form action="userupdate.jsp">
 							<input type="submit" value=" MY USER UPDATE " style="margin:20px;" >
 							</form></tr>
 							
 							<tr><form action="userJoin.jsp">
 							<input type="submit" value=" MY ADD MEMBER " style="margin:20px;"> 
-							</form></tr>
+							</form></tr> -->
 						</table>
 					</nav>			
 			</div>
