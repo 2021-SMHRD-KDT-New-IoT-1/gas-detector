@@ -1,3 +1,5 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.model.MemberDAO"%>
 <%@page import="com.model.AdminMemberVO"%>
 <%@page import="com.model.UserMemberVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
@@ -14,7 +16,10 @@
 	
 	</style>
 	<body style="text-align: center; background:rgba(0,0,0,0.9)">
-	
+	<%
+		MemberDAO dao = new MemberDAO();
+		ArrayList<AdminMemberVO> adminall = dao.allAdmin();
+	%>
 		<!-- Wrapper -->
 			<div id="wrapper">
 				<!-- Menu -->
@@ -27,6 +32,13 @@
 									<li><input name="user_tel" type="text"    placeholder="회원 전화번호를 입력하세요" style="width: 500px; margin: 0 auto;"></li>
 									<li><input name="user_add" type="text"    placeholder="회원의 주소를 입력하세요" style="width: 500px; margin: 0 auto;"></li>
 									<li><input name="user_mid" type="text"    placeholder="기기 번호을 입력하세요" style="width: 500px; margin: 0 auto;"></li>
+									<li>
+									<select name="admin_no" style="width: 500px; margin: 0 auto; ">
+										<%for(AdminMemberVO vo7 : adminall){%>
+											<option style="color:black;"><%=vo7.getAdmin_no()%>/<%=vo7.getAdmin_name()%></option>
+										<%}%>
+									</select>
+									</li>
 									<li><input type="submit" value="Update" class="button fit" style="width: 500px; margin: 0 auto;"></li>
 								</form>
 						</ul>

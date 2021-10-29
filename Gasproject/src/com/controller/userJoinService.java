@@ -25,9 +25,12 @@ public class userJoinService extends HttpServlet {
 		String user_tel = request.getParameter("user_tel");
 		String user_add = request.getParameter("user_add");
 		String user_mid = request.getParameter("user_mid");
+		String admin_no = request.getParameter("admin_no");
+		
+		String result2 = admin_no.substring(admin_no.lastIndexOf("/")+1);
 	
 		MemberDAO dao = new MemberDAO();
-		int cnt = dao.adduser(user_no, user_name, user_tel, user_add, user_mid);
+		int cnt = dao.adduser(user_no, user_name, user_tel, user_add, user_mid, result2);
 		
 		if(cnt>0) {
 			System.out.println("회원 추가 성공");

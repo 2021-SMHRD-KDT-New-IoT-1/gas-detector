@@ -28,6 +28,14 @@ public class AdminMemberVO {
 
 	
 
+	public AdminMemberVO(String admin_no, String admin_name) {
+		super();
+		this.admin_no = admin_no;
+		this.admin_name = admin_name;
+	}
+
+
+
 	public AdminMemberVO(String admin_id, String admin_tel, String admin_email, String admin_job, String loc_no) {
 		super();
 		this.admin_id = admin_id;

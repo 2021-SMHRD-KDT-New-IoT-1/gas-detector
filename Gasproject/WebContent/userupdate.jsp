@@ -20,6 +20,7 @@
 		AdminMemberVO vo2 = (AdminMemberVO)session.getAttribute("member");
 		MemberDAO dao = new MemberDAO();
 		ArrayList<UserMemberVO> userall = dao.allMember();
+		ArrayList<AdminMemberVO> adminall = dao.allAdmin();
 	%>
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -31,15 +32,21 @@
 									<li>
 										<select name="user_no" style="width: 500px; margin: 0 auto;">
 										<%for(UserMemberVO vo5 : userall){%>
-											<option><%=vo5.getUser_name()%>/<%=vo5.getUser_no()%></option>
+											<option style="color:black;"><%=vo5.getUser_name()%>/<%=vo5.getUser_no()%></option>
 										<%}%>
 									</select>
 									</li>
-									<!-- <li><input name="user_no" type="text" placeholder="수정할 회원의 회원번호를 입력해주세요" style="width: 500px; margin: 0 auto;"></li> -->
+									
 									<li><input name="user_name" type="text" placeholder="이름을입력하세요" style="width: 500px; margin: 0 auto;"></li>
 									<li><input name="user_tel" type="text"    placeholder="전화번호를 입력하세요" style="width: 500px; margin: 0 auto;"></li>
 									<li><input name="user_add" type="text"    placeholder="주소를 입력하세요" style="width: 500px; margin: 0 auto;"></li>
 									<li><input name="user_mid" type="text"    placeholder="기기번호를 입력하세요" style="width: 500px; margin: 0 auto;"></li>
+									<li>
+									<select name="admin_no" style="width: 500px; margin: 0 auto; ">
+										<%for(AdminMemberVO vo6 : adminall){%>
+											<option style="color:black;"><%=vo6.getAdmin_no()%>/<%=vo6.getAdmin_name()%></option>
+										<%}%>
+									</li>
 									<li><input type="submit" value="Update" class="button fit" style="width: 500px; margin: 0 auto;"></li>
 								</form>
 						</ul>

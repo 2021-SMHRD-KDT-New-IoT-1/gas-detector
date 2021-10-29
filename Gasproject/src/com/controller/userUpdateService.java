@@ -25,12 +25,15 @@ public class userUpdateService extends HttpServlet {
 		String user_tel = request.getParameter("user_tel");
 		String user_add = request.getParameter("user_add");
 		String user_mid = request.getParameter("user_mid");
+		String admin_no = request.getParameter("admin_no");
 		
 		String result = user_no.substring(user_no.lastIndexOf("/")+1);
-		System.out.println(result);
+		String result2 = admin_no.substring(admin_no.lastIndexOf("/")+1);
+		
+		System.out.println(result + result2);
 		
 		MemberDAO dao = new MemberDAO();
-		int cnt = dao.userUpdate(user_name, user_tel, user_add, user_mid, result);
+		int cnt = dao.userUpdate(user_name, user_tel, user_add, user_mid, result2, result);
 		
 		if(cnt>0) {
 			
@@ -42,9 +45,7 @@ public class userUpdateService extends HttpServlet {
 		}
 		
 		
-//		HttpSession session = request.getSession();
-//		// 세션 값 설정
-//		session.setAttribute("member", vo2);
+
 
 	}
 

@@ -8,15 +8,17 @@ public class UserMemberVO {
 	private String user_tel;
 	private String user_add;
 	private String user_mid;
+	private String admin_no;
 	
 	
-	public UserMemberVO(String user_no, String user_name, String user_tel, String user_add, String user_mid) {
+	public UserMemberVO(String user_no, String user_name, String user_tel, String user_add, String user_mid, String admin_no) {
 		super();
 		this.user_no = user_no;
 		this.user_name = user_name;
 		this.user_tel = user_tel;
 		this.user_add = user_add;
 		this.user_mid = user_mid;
+		this.admin_no = admin_no;
 	}
 
 
@@ -25,6 +27,16 @@ public class UserMemberVO {
 		this.user_name = user_name;
 		this.user_tel = user_tel;
 		this.user_add = user_add;
+	}
+
+
+	public String getAdmin_no() {
+		return admin_no;
+	}
+
+
+	public void setAdmin_no(String admin_no) {
+		this.admin_no = admin_no;
 	}
 
 
