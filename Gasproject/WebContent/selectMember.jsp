@@ -18,7 +18,7 @@
 	<style>
 		
 	</style>
-	<body style="text-align: center; background:rgba(0,0,0,0.9)">
+	<body style="text-align: center; background : radial-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8)), url(images/»ö»ó.png);">
 		<%
 			MemberDAO dao = new MemberDAO();
 			ArrayList<UserMemberVO> all = dao.allMember();
