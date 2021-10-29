@@ -79,9 +79,9 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 					placeholder="Email을 입력하세요"></li>
 				<li><input style="font-family: GmarketSansMedium;"name="admin_job" type="text" placeholder="소속을 입력하세요"></li>
 				<!--  <li><input name="loc_no" type="text" placeholder="관리 지역번호를 입력하세요" ></li>  -->
-				<li><select name="loc_no">
+				<li><select name="loc_no" style="font-family: GmarketSansMedium;">
 						<%for(localVO vo4 : locall){%>
-						<option name="loc" style="color:black; font-family: GmarketSansMedium;"><%=vo4.getLoc_name()%>/<%=vo4.getLoc_no()%></option>
+						<option name="loc" style="color:black;font-family: GmarketSansMedium;"><%=vo4.getLoc_name()%>/<%=vo4.getLoc_no()%></option>
 						<%}%>
 				</select></li>
 				<li><input type="submit" value="Join Us" class="button fit"></li>
