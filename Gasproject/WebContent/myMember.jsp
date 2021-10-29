@@ -65,11 +65,11 @@
 							<input type="button" value=" HOME " style="margin:20px;" onclick='window.location.href="main.jsp"'>
 							</tr>
 							
-							<tr>
+							<tr><form action="userupdate.jsp">
 							<input type="submit" value=" MY USER UPDATE " style="margin:20px;" >
 							</form></tr>
 							
-							<tr><form action="myuserJoin.jsp">
+							<tr><form action="userJoin.jsp">
 							<input type="submit" value=" MY ADD MEMBER " style="margin:20px;"> 
 							</form></tr>
 						</table>

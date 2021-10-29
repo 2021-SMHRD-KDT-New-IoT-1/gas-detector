@@ -25,7 +25,7 @@
 				<!-- Menu -->
 					<nav id="Update" style="font-family: GmarketSansMedium;">	
 						<ul class="actions vertical">
-							<li><h5>회원정보 추가</h5></li>
+							<li><h3>회원정보 추가</h3></li>
 								<form action="userJoinService" method="post">
 									<li><input name="user_no" type="text" placeholder="회원 번호를 입력하세요" style="width: 500px; margin: 0 auto; font-family: GmarketSansMedium;"></li>
 									<li><input name="user_name" type="text"    placeholder="회원이름을 입력하세요" style="width: 500px; margin: 0 auto; font-family: GmarketSansMedium;"></li>

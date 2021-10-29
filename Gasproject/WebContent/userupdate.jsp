@@ -27,7 +27,7 @@
 				<!-- Menu -->
 					<nav id="Update" style="font-family: GmarketSansMedium;">	
 						<ul class="actions vertical">
-							<li><h5>사용자정보수정</h5></li>
+							<li><h3>사용자정보수정</h3></li>
 								<form action="userUpdateService" method="post">
 									<li>
 										<select name="user_no" style="width: 500px; margin: 0 auto; font-family: GmarketSansMedium;">
