@@ -25,6 +25,8 @@ public class MemberDAO {
 	ArrayList<localVO> locall = null;
 	ArrayList<AdminMemberVO> adminall = null;
 
+	ArrayList<UserMemberVO> myMember = null;
+		
 	public void connection() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -92,7 +94,7 @@ public class MemberDAO {
 		try {
 			connection();
 			
-			String sql = "select admin_id, admin_email, admin_tel, admin_job, loc_no from ADMIN_MEMBER where admin_id=? and admin_pw=?";
+			String sql = "select admin_no, admin_id, admin_email, admin_tel, admin_job, loc_no from ADMIN_MEMBER where admin_id=? and admin_pw=?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, admin_id);	
 			psmt.setString(2, admin_pw);		
@@ -101,13 +103,14 @@ public class MemberDAO {
 			
 			if(rs.next()) {
 				System.out.println("로그인 성공!");
+				String get_admin_no = rs.getString("admin_no");
 				String get_admin_id = rs.getString("admin_id");
 				String get_email = rs.getString("admin_email");
 				String get_tel = rs.getString("admin_tel");
 				String get_job = rs.getString("admin_job");
 				String get_loc_no= rs.getString("loc_no");
 				
-				vo2 = new AdminMemberVO(get_admin_id,get_email, get_tel, get_job, get_loc_no);
+				vo2 = new AdminMemberVO(get_admin_no, get_admin_id, get_email, get_tel, get_job, get_loc_no);
 						
 			}else {
 				System.out.println("로그인 실패!");
@@ -481,11 +484,71 @@ public class MemberDAO {
 		return cnt;
 		}
 		
+	
+	
+	//내가 관리하고 있는 사용자 정보
+	public ArrayList<UserMemberVO> myMember(String admin_no) {
+		myMember = new ArrayList<UserMemberVO>();		
+		
+		try {
+			connection();
+			
+			String sql = "select user_no, user_name, user_tel, user_add, user_mid, admin_no from USER_MEMBER where admin_no=?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, admin_no);
+						
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				System.out.println("회원정보 불러오기 성공!");
+				
+				String get_no = rs.getString("user_no");
+				String get_name = rs.getString("user_name");
+				String get_tel = rs.getString("user_tel");
+				String get_add = rs.getString("user_add");
+				String get_mid = rs.getString("user_mid");
+				String get_admin_no = rs.getString("admin_no");
+				
+				vo = new UserMemberVO(get_no, get_name, get_tel, get_add, get_mid, get_admin_no);
+				myMember.add(vo);
+			}	
+			
+		} catch (Exception e) {
+			System.out.println("회원정보 불러오기 실패!");
+			e.printStackTrace();
+		}finally {
+			close();
+			}
+		return myMember;
+		}
+	
+	//내 사용자 정보 수정
+	public int myuserUpdate(String user_name, String user_tel, String user_add, String user_mid, String result1, String result2) {
+		try {
+			connection();
+			
+			String sql = "update USER_MEMBER set user_name=?, user_tel=?, user_add=?, user_mid=?, admin_no=? where user_no=?";
+			psmt = conn.prepareStatement(sql);
+				
+			psmt.setString(1, user_name);		
+			psmt.setString(2, user_tel);	
+			psmt.setString(3, user_add);
+			psmt.setString(4, user_mid);
+			psmt.setString(5, result2);
+			psmt.setString(6, result1);
+			
+			
+			cnt = psmt.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("수정 실패!");
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return cnt;
 	}
-	
-	
-	
-	
+}
 	
 	
 	

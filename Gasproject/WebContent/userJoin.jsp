@@ -25,7 +25,7 @@
 				<!-- Menu -->
 					<nav id="Update" style="font-family: GmarketSansMedium;">	
 						<ul class="actions vertical">
-							<li><h5>회원정보 추가</h5></li>
+							<li><h3>회원정보 추가</h3></li>
 								<form action="userJoinService" method="post">
 									<li><input name="user_no" type="text" placeholder="회원 번호를 입력하세요" style="width: 500px; margin: 0 auto; font-family: GmarketSansMedium;"></li>
 									<li><input name="user_name" type="text"    placeholder="회원이름을 입력하세요" style="width: 500px; margin: 0 auto; font-family: GmarketSansMedium;"></li>
@@ -33,13 +33,24 @@
 									<li><input name="user_add" type="text"    placeholder="회원의 주소를 입력하세요" style="width: 500px; margin: 0 auto; font-family: GmarketSansMedium;"></li>
 									<li><input name="user_mid" type="text"    placeholder="기기 번호을 입력하세요" style="width: 500px; margin: 0 auto; font-family: GmarketSansMedium;"></li>
 									<li>
-									<select name="admin_no" style="width: 500px; margin: 0 auto; ">
+									<select name="admin_no" style="width: 500px; margin: 0 auto; font-family: GmarketSansMedium;">
 										<%for(AdminMemberVO vo7 : adminall){%>
 											<option style="color:black; font-family: GmarketSansMedium;"><%=vo7.getAdmin_no()%>/<%=vo7.getAdmin_name()%></option>
 										<%}%>
 									</select>
 									</li>
-									<li><input type="submit" value="Update" class="button fit" style="width: 500px; margin: 0 auto;"></li>
+									
+									<table>
+									
+										<tr>
+										<input type="submit" value="Update" class="button fit" style="width: 300px; margin: 0 auto;">
+										</tr>
+										
+										<tr>
+										<input type="button" value=" BACK " style="margin:20px;" onclick='window.location.href="selectMember.jsp"'>
+										</tr>
+									</table>
+									
 								</form>
 						</ul>
 					</nav>			

@@ -34,7 +34,7 @@ public class GasCheckService extends HttpServlet {
 			response.sendRedirect("GasCheck.jsp");
 		}else {
 			System.out.println("현황불러오기 실패..");
-			response.sendRedirect("selectMember.jsp");
+			response.sendRedirect("myMember.jsp");
 		}
 		
 		

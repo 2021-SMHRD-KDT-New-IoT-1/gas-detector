@@ -1,11 +1,11 @@
-<%@page import="com.model.GasVO"%>
+<%@page import="com.model.AdminMemberVO"%>
 <%@page import="com.model.UserMemberVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.model.MemberDAO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html style=" margin-left: 200px; margin-right: 200px;">
 	<head>
 		<title>Forty by HTML5 UP</title>
 		<meta charset="utf-8" />
@@ -19,11 +19,12 @@
 	<style>
 		
 	</style>
-	<body style="text-align: center; background:rgba(0,0,0,0.9);">
+	<body style="text-align: center; background:rgba(0,0,0,0.9)">
 		<%
 			MemberDAO dao = new MemberDAO();
-			String user_no = (String)session.getAttribute("user_no");
-			ArrayList<GasVO> gasall = dao.gascheck(user_no);
+			AdminMemberVO vo2 = (AdminMemberVO)session.getAttribute("member");
+		 	ArrayList<UserMemberVO> myMember = dao.myMember(vo2.getAdmin_no());
+			
 		%>
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -31,39 +32,46 @@
 					<nav id="Update" style="font-family: GmarketSansMedium;">	
 						<table>
 							
-							<caption><h2>가스 현황 확인 페이지</h2></caption>
+							<caption><h2>MY 사용자 확인 페이지</h2></caption>
 						
 							<tr>
-								<td>관리번호</td>
-								<td>관리자번호</td>
-								<td>사용자번호</td>
+								<td>회원번호</td>
+								<td>이름</td>
+								<td>연락처</td>
+								<td>주소</td>
 								<td>기기번호</td>
-								<td>가스농도</td>		
-								<td>측정시간</td>					
+								<td>관리자번호</td>
+								<td>CO</td>	
+								<td></td>
+														
 							</tr>
 							
-							
 						<%
-						for(GasVO vo3 : gasall){
+						for(UserMemberVO vo : myMember){
 													%>
                          <tr>
-                          <td><%=vo3.getManager_no() %></td>
-                          <td><%=vo3.getAdmin_no() %></td>
-                          <td><%=vo3.getUser_no() %></td> 
-                          <td><%=vo3.getUser_mid() %></td> 
-                          <td><%=vo3.getGas_level() %></td> 
-                          <td><%=vo3.getDec_time() %></td> 
-                          <td><a href="#" class='delete'>신고</a></td>
-                         </tr>
+                          <td><%=vo.getUser_no() %></td>
+                          <td><%=vo.getUser_name() %></td>
+                          <td><%=vo.getUser_tel() %></td> 
+                          <td><%=vo.getUser_add() %></td> 
+                          <td><%=vo.getUser_mid() %></td> 
+                          <td><%=vo.getAdmin_no() %></td> 
+                          <td><a href= "GasCheckService?user_no=<%=vo.getUser_no() %>">현황 확인</a></td>
                         <%}%>
-                     
+                        
+                        </table>
+                     <table>
+							<tr>
+							<input type="button" value=" HOME " style="margin:20px;" onclick='window.location.href="main.jsp"'>
+							</tr>
 							
-						</table>
-												
-						<table>		
-						<tr>
-						<input type="button" value=" BACK " style="margin:20px;" onclick='window.location.href="myMember.jsp"'>
-						</tr>
+							<!-- <tr><form action="userupdate.jsp">
+							<input type="submit" value=" MY USER UPDATE " style="margin:20px;" >
+							</form></tr>
+							
+							<tr><form action="userJoin.jsp">
+							<input type="submit" value=" MY ADD MEMBER " style="margin:20px;"> 
+							</form></tr> -->
 						</table>
 					</nav>			
 			</div>

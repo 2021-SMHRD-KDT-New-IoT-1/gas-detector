@@ -41,7 +41,8 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 		<%}else{ %> 
 		
 		<a href="localList.jsp" style="font-family: GmarketSansMedium;">관리지역목록</a> 
-		<a href="selectMember.jsp" style="font-family: GmarketSansMedium;">관리회원목록</a>
+		<a href="myMember.jsp" style="font-family: GmarketSansMedium;">관리사용자목록</a>
+		<a href="selectMember.jsp" style="font-family: GmarketSansMedium;">전체사용자목록</a>
 		<a href="update.jsp" style="font-family: GmarketSansMedium;">개인정보수정</a>
 		<a href="logoutService" style="font-family: GmarketSansMedium;">로그아웃</a> 
 		
@@ -79,9 +80,9 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 					placeholder="Email을 입력하세요"></li>
 				<li><input style="font-family: GmarketSansMedium;"name="admin_job" type="text" placeholder="소속을 입력하세요"></li>
 				<!--  <li><input name="loc_no" type="text" placeholder="관리 지역번호를 입력하세요" ></li>  -->
-				<li><select name="loc_no">
+				<li><select name="loc_no" style="font-family: GmarketSansMedium;">
 						<%for(localVO vo4 : locall){%>
-						<option name="loc" style="color:black; font-family: GmarketSansMedium;"><%=vo4.getLoc_name()%>/<%=vo4.getLoc_no()%></option>
+						<option name="loc" style="color:black;font-family: GmarketSansMedium;"><%=vo4.getLoc_name()%>/<%=vo4.getLoc_no()%></option>
 						<%}%>
 				</select></li>
 				<li><input type="submit" value="Join Us" class="button fit"></li>
@@ -108,10 +109,10 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 			<%}%> 
 			</header>
 			
-			<div>
-			<strong font-family: 'Nanum Gothic Coding', monospace;><i class="fa fa-quote-left" aria-hidden="true"></i>   
+			<div >
+			<p style="font-family: InkLipquid; font-size: 65px"><i class="fa fa-quote-left" aria-hidden="true"></i>   
 			  가스 유출로 인한 위험으로부터 당신을 지켜드립니다. 
-			<i class="fa fa-quote-right" aria-hidden="true"></i>  </strong>
+			<i class="fa fa-quote-right" aria-hidden="true"></i></p>
 			</div>	 
 				
 				<br><br> 

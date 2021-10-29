@@ -40,9 +40,9 @@
 									<li><input name="admin_email" type="text"    placeholder="이메일을 입력하세요" style="width: 500px; margin: 0 auto; font-family: GmarketSansMedium;"></li>
 									<li><input name="admin_job" type="text"    placeholder="소속을 입력하세요" style="width: 500px; margin: 0 auto; font-family: GmarketSansMedium;"></li>
 									<li>
-								 	<select name="loc_no" style="width: 500px; margin: 0 auto;">
+								 	<select name="loc_no" style="width: 500px; margin: 0 auto; font-family: GmarketSansMedium;">
 										<%for(localVO vo4 : locall){%>
-											<option name="loc" style='color : black;'><%=vo4.getLoc_name()%>/<%=vo4.getLoc_no()%></option>
+											<option name="loc" style="color : black; font-family: GmarketSansMedium;"><%=vo4.getLoc_name()%>/<%=vo4.getLoc_no()%></option>
 										<%}%>
 									</select>
 								   </li> 
