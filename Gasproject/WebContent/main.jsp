@@ -57,8 +57,8 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 		<ul class="links">
 			<li><h5>로그인</h5></li>
 			<form action="loginService" method="post" >
-				<li ><input name="admin_id" type="text" placeholder="ID을 입력하세요"></li>
-				<li><input name="admin_pw" type="password"
+				<li><input style="font-family: GmarketSansMedium;" name="admin_id" type="text" placeholder="ID을 입력하세요"></li>
+				<li><input style="font-family: GmarketSansMedium;" name="admin_pw" type="password"
 					placeholder="PW를 입력하세요"></li>
 				<li><input type="submit" value="LogIn" class="button fit"></li>
 			</form>
@@ -66,23 +66,23 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 		<ul class="actions vertical">
 			<li><h5>회원가입</h5></li>
 			<form action="JoinService" method="post">
-				<li><input name="admin_id" id="input_email" type="text"
+				<li><input style="font-family: GmarketSansMedium;" name="admin_id" id="input_email" type="text"
 					placeholder="ID을 입력하세요"> <input type="button"
 					value="ID중복체크" onclick="emailCheck()"><br> <span
 					id="sp_result"></span></li>
-				<li><input name="admin_pw" type="password"
+				<li><input style="font-family: GmarketSansMedium;"name="admin_pw" type="password"
 					placeholder="PW를 입력하세요"></li>
-				<li><input name="admin_name" type="text"
+				<li><input style="font-family: GmarketSansMedium;"name="admin_name" type="text"
 					placeholder="이름를 입력하세요"></li>
-				<li><input name="admin_tel" type="text"
+				<li><input style="font-family: GmarketSansMedium;"name="admin_tel" type="text"
 					placeholder="전화번호를 입력하세요"></li>
-				<li><input name="admin_email" type="text"
+				<li><input style="font-family: GmarketSansMedium;"name="admin_email" type="text"
 					placeholder="Email을 입력하세요"></li>
-				<li><input name="admin_job" type="text" placeholder="소속을 입력하세요"></li>
+				<li><input style="font-family: GmarketSansMedium;"name="admin_job" type="text" placeholder="소속을 입력하세요"></li>
 				<!--  <li><input name="loc_no" type="text" placeholder="관리 지역번호를 입력하세요" ></li>  -->
 				<li><select name="loc_no">
 						<%for(localVO vo4 : locall){%>
-						<option name="loc" style="color:black;"><%=vo4.getLoc_name()%>/<%=vo4.getLoc_no()%></option>
+						<option name="loc" style="color:black; font-family: GmarketSansMedium;"><%=vo4.getLoc_name()%>/<%=vo4.getLoc_no()%></option>
 						<%}%>
 				</select></li>
 				<li><input type="submit" value="Join Us" class="button fit"></li>
@@ -97,7 +97,7 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 
 		<div class="inner">
 			<header class="major" > <%if(vo2==null){ %>
-			<h1 style="font-family: GmarketSansMedium;">로그인해 주세요.</h1>
+			<h1 style="font-family: GmarketSansMedium;">관리자님, 로그인해 주세요.</h1>
 			<%}else{%>
 			<h2 style="font-family: GmarketSansMedium;">
 				관리자,
@@ -119,7 +119,7 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 				 
     <div class="content" style="margin-left:-70px;">
 				<section class="split"> 
-				<div class="contact-method">
+				<div class="contact-method" style="font-family: GmarketSansMedium;">
 					<h3 style="font-family: GmarketSansMedium;"><i class="fa fa-envelope-o" aria-hidden="true"></i> Email</h3>
 					<%if(vo2==null){ %>
 					<a href="#"></a>
@@ -130,7 +130,7 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 				</div>
 				</section> 
 				<section>
-				<div class="contact-method">
+				<div class="contact-method" style="font-family: GmarketSansMedium;">
 					<h3 style="font-family: GmarketSansMedium;"><i class="fa fa-phone" aria-hidden="true"></i> Phone</h3>
 					<%if(vo2==null){ %>
 					<span></span>
@@ -142,7 +142,7 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 				</div>
 				</section> 
 				<section>
-				<div class="contact-method">
+				<div class="contact-method" style="font-family: GmarketSansMedium;">
 					<h3 style="font-family: GmarketSansMedium;"><i class="fa fa-building-o" aria-hidden="true"></i> JOB</h3>
 					
 					<%if(vo2==null){ %>
@@ -160,8 +160,8 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 		<!-- Footer -->
 		<footer id="footer">
 		<div class="inner" style="font-family: GmarketSansMedium;">
-			<ul class="icons">
-				<li><a href="#" ><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></li>
+			<ul class="icons" >
+				<li ><a href="#" ><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></li>
 				<li><a href="#" ><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a></li>
 				<li><a href="#" ><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</a></li>
 				<li><a href="#" ><i class="fa fa-github-alt" aria-hidden="true"></i> GitHub</a></li>

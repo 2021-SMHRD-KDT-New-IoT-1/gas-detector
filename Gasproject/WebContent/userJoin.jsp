@@ -27,15 +27,15 @@
 						<ul class="actions vertical">
 							<li><h5>회원정보 추가</h5></li>
 								<form action="userJoinService" method="post">
-									<li><input name="user_no" type="text" placeholder="회원 번호를 입력하세요" style="width: 500px; margin: 0 auto;"></li>
-									<li><input name="user_name" type="text"    placeholder="회원이름을 입력하세요" style="width: 500px; margin: 0 auto;"></li>
-									<li><input name="user_tel" type="text"    placeholder="회원 전화번호를 입력하세요" style="width: 500px; margin: 0 auto;"></li>
-									<li><input name="user_add" type="text"    placeholder="회원의 주소를 입력하세요" style="width: 500px; margin: 0 auto;"></li>
-									<li><input name="user_mid" type="text"    placeholder="기기 번호을 입력하세요" style="width: 500px; margin: 0 auto;"></li>
+									<li><input name="user_no" type="text" placeholder="회원 번호를 입력하세요" style="width: 500px; margin: 0 auto; font-family: GmarketSansMedium;"></li>
+									<li><input name="user_name" type="text"    placeholder="회원이름을 입력하세요" style="width: 500px; margin: 0 auto; font-family: GmarketSansMedium;"></li>
+									<li><input name="user_tel" type="text"    placeholder="회원 전화번호를 입력하세요" style="width: 500px; margin: 0 auto; font-family: GmarketSansMedium;"></li>
+									<li><input name="user_add" type="text"    placeholder="회원의 주소를 입력하세요" style="width: 500px; margin: 0 auto; font-family: GmarketSansMedium;"></li>
+									<li><input name="user_mid" type="text"    placeholder="기기 번호을 입력하세요" style="width: 500px; margin: 0 auto; font-family: GmarketSansMedium;"></li>
 									<li>
 									<select name="admin_no" style="width: 500px; margin: 0 auto; ">
 										<%for(AdminMemberVO vo7 : adminall){%>
-											<option style="color:black;"><%=vo7.getAdmin_no()%>/<%=vo7.getAdmin_name()%></option>
+											<option style="color:black; font-family: GmarketSansMedium;"><%=vo7.getAdmin_no()%>/<%=vo7.getAdmin_name()%></option>
 										<%}%>
 									</select>
 									</li>
