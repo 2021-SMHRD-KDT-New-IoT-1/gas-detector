@@ -39,7 +39,7 @@
 								<td>기기번호</td>
 								<td>관리자번호</td>
 								<td>사용자삭제</td>
-								<td>CO</td>						
+													
 							</tr>
 							
 						<%
@@ -53,7 +53,7 @@
                           <td><%=vo.getUser_mid() %></td> 
                           <td><%=vo.getAdmin_no() %></td> 
                           <td><a href="deleteService?user_mid=<%=vo.getUser_mid()%>">삭제</a></td> 
-                          <td><a href= "GasCheckService?user_no=<%=vo.getUser_no() %>">현황 확인</a></td>
+                          
                          </tr>
                         <%}%>
                         

@@ -59,11 +59,11 @@
                      
 							
 						</table>
-						<table>
-							<form action="loginService">
-							<input type="submit" value="HOME" >
-							</form>
-							
+												
+						<table>		
+						<tr>
+						<input type="button" value=" BACK " style="margin:20px;" onclick='window.location.href="myMember.jsp"'>
+						</tr>
 						</table>
 					</nav>			
 			</div>

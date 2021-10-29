@@ -56,8 +56,7 @@
                           <td><%=vo.getUser_mid() %></td> 
                           <td><%=vo.getAdmin_no() %></td> 
                           <td><a href="deleteService?user_mid=<%=vo.getUser_mid()%>">삭제</a></td> 
-                          <td><a href= "GasCheckService?user_no=<%=vo.getUser_no() %>">현황 확인</a></td> 
-                         </tr>
+                          <td><a href= "GasCheckService?user_no=<%=vo.getUser_no() %>">현황 확인</a></td>
                         <%}%>
                         
                         </table>
@@ -66,12 +65,12 @@
 							<input type="button" value=" HOME " style="margin:20px;" onclick='window.location.href="main.jsp"'>
 							</tr>
 							
-							<tr><form action="myuserupdate.jsp">
+							<tr>
 							<input type="submit" value=" MY USER UPDATE " style="margin:20px;" >
 							</form></tr>
 							
 							<tr><form action="myuserJoin.jsp">
-							<input type="submit" value=" MY ADD MEMBER " style="margin:20px;">
+							<input type="submit" value=" MY ADD MEMBER " style="margin:20px;"> 
 							</form></tr>
 						</table>
 					</nav>			
