@@ -1,3 +1,4 @@
+<%@page import="com.model.AdminMemberVO"%>
 <%@page import="com.model.UserMemberVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.model.MemberDAO"%>
@@ -21,7 +22,9 @@
 	<body style="text-align: center; background:rgba(0,0,0,0.9)">
 		<%
 			MemberDAO dao = new MemberDAO();
-			ArrayList<UserMemberVO> all = dao.allMember();
+			AdminMemberVO vo2 = (AdminMemberVO)session.getAttribute("member");
+		 	ArrayList<UserMemberVO> myMember = dao.myMember(vo2.getAdmin_no());
+			
 		%>
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -29,7 +32,7 @@
 					<nav id="Update" style="font-family: GmarketSansMedium;">	
 						<table>
 							
-							<caption><h2>사용자 확인&관리 페이지</h2></caption>
+							<caption><h2>MY 사용자 확인 페이지</h2></caption>
 						
 							<tr>
 								<td>회원번호</td>
@@ -39,11 +42,11 @@
 								<td>기기번호</td>
 								<td>관리자번호</td>
 								<td>사용자삭제</td>
-								<td>CO</td>						
+								<td>CO</td>							
 							</tr>
 							
 						<%
-						for(UserMemberVO vo : all){
+						for(UserMemberVO vo : myMember){
 													%>
                          <tr>
                           <td><%=vo.getUser_no() %></td>
@@ -53,7 +56,7 @@
                           <td><%=vo.getUser_mid() %></td> 
                           <td><%=vo.getAdmin_no() %></td> 
                           <td><a href="deleteService?user_mid=<%=vo.getUser_mid()%>">삭제</a></td> 
-                          <td><a href= "GasCheckService?user_no=<%=vo.getUser_no() %>">현황 확인</a></td>
+                          <td><a href= "GasCheckService?user_no=<%=vo.getUser_no() %>">현황 확인</a></td> 
                          </tr>
                         <%}%>
                         
@@ -63,12 +66,12 @@
 							<input type="button" value=" HOME " style="margin:20px;" onclick='window.location.href="main.jsp"'>
 							</tr>
 							
-							<tr><form action="userupdate.jsp">
-							<input type="submit" value=" USER UPDATE " style="margin:20px;" >
+							<tr><form action="myuserupdate.jsp">
+							<input type="submit" value=" MY USER UPDATE " style="margin:20px;" >
 							</form></tr>
 							
-							<tr><form action="userJoin.jsp">
-							<input type="submit" value=" ADD MEMBER " style="margin:20px;">
+							<tr><form action="myuserJoin.jsp">
+							<input type="submit" value=" MY ADD MEMBER " style="margin:20px;">
 							</form></tr>
 						</table>
 					</nav>			

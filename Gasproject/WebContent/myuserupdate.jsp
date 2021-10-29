@@ -19,7 +19,7 @@
 	<%
 		AdminMemberVO vo2 = (AdminMemberVO)session.getAttribute("member");
 		MemberDAO dao = new MemberDAO();
-		ArrayList<UserMemberVO> userall = dao.allMember();
+		ArrayList<UserMemberVO> myMember = dao.myMember(vo2.getAdmin_no());
 		ArrayList<AdminMemberVO> adminall = dao.allAdmin();
 	%>
 		<!-- Wrapper -->
@@ -28,10 +28,10 @@
 					<nav id="Update" style="font-family: GmarketSansMedium;">	
 						<ul class="actions vertical">
 							<li><h5>사용자정보수정</h5></li>
-								<form action="userUpdateService" method="post">
+								<form action="myuserUpdateService" method="post">
 									<li>
 										<select name="user_no" style="width: 500px; margin: 0 auto;">
-										<%for(UserMemberVO vo5 : userall){%>
+										<%for(UserMemberVO vo5 : myMember){%>
 											<option style="color:black;"><%=vo5.getUser_name()%>/<%=vo5.getUser_no()%></option>
 										<%}%>
 									</select>
@@ -54,7 +54,7 @@
 										</tr>
 										
 										<tr>
-										<input type="button" value=" BACK " style="margin:20px;" onclick='window.location.href="selectMember.jsp"'>
+										<input type="button" value=" BACK " style="margin:20px;" onclick='window.location.href="myMember.jsp"'>
 										</tr>
 									</table>
 									
