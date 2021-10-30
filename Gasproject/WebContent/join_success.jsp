@@ -17,7 +17,7 @@
 			margin-top:10%;
 		}
 	</style>
-	<body style="text-align: center;">
+	<body style="text-align: center; background : radial-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8)), url(images/»ö»ó.png);">
 		<%
 			String admin_id = (String)request.getAttribute("admin_id");
 		

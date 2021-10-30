@@ -51,7 +51,7 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 		</header>
 
 		<!-- Menu -->
-		<nav id="menu" style="font-family: GmarketSansMedium;">
+		<nav id="menu" style="font-family: GmarketSansMedium; margin-right:0;">
 		<ul class="links">
 			<li><h5>·Î±×ÀÎ</h5></li>
 			<form action="loginService" method="post" >

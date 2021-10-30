@@ -5,7 +5,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html style=" margin-left: 200px; margin-right: 200px;">
+<html style=" margin-left: 200px; margin-right: 200px; ">
 	<head>
 		<title>Forty by HTML5 UP</title>
 		<meta charset="utf-8" />
@@ -19,13 +19,13 @@
 	<style>
 		
 	</style>
-	<body style="text-align: center; background:rgba(0,0,0,0.9);" >
+	<body style="text-align: center; background : radial-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8)), url(images/»ö»ó.png); "   >
 		<%
 			MemberDAO dao = new MemberDAO();
 			ArrayList<localVO> locall = dao.localList();
 		%>
 		<!-- Wrapper -->
-			<div id="wrapper"   >
+			<div id="wrapper">
 				<!-- Menu -->
 					<nav id="Update" style="font-family: GmarketSansMedium;">	
 						<table >
