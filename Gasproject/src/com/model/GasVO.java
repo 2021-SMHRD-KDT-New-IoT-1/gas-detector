@@ -8,6 +8,7 @@ public class GasVO {
 	private String user_mid;
 	private String gas_level;
 	private String dec_time;
+	private String alert_cnt;
 	
 	public GasVO(String manager_no, String admin_no, String user_no, String user_mid, String gas_level,
 			String dec_time) {
@@ -19,6 +20,17 @@ public class GasVO {
 		this.gas_level = gas_level;
 		this.dec_time = dec_time;
 	}
+	
+	
+
+	public GasVO(String user_no, String user_mid, String alert_cnt) {
+		super();
+		this.user_no = user_no;
+		this.user_mid = user_mid;
+		this.alert_cnt = alert_cnt;
+	}
+
+
 
 	public String getManager_no() {
 		return manager_no;
@@ -66,6 +78,18 @@ public class GasVO {
 
 	public void setDec_time(String dec_time) {
 		this.dec_time = dec_time;
+	}
+
+
+
+	public String getAlert_cnt() {
+		return alert_cnt;
+	}
+
+
+
+	public void setAlert_cnt(String alert_cnt) {
+		this.alert_cnt = alert_cnt;
 	}
 	
 	

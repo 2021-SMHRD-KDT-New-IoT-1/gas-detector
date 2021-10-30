@@ -26,7 +26,7 @@ public class MemberDAO {
 	ArrayList<AdminMemberVO> adminall = null;
 
 	ArrayList<UserMemberVO> myMember = null;
-	String alert_cnt = null;
+	
 		
 	public void connection() {
 		try {
@@ -553,6 +553,7 @@ public class MemberDAO {
 	
 	//가스 가장 최신 데이터 하나 셀렉트
 	public String gasOne() {
+		String alert_cnt = null;
 		
 		try {
 			connection();
@@ -566,7 +567,7 @@ public class MemberDAO {
 				System.out.println("회원정보 불러오기 성공!");
 				
 				alert_cnt = rs.getString("alert_cnt");
-				
+
 			}	
 				
 			} catch (Exception e) {
@@ -579,14 +580,45 @@ public class MemberDAO {
 		
 	}
 
+	public String gasOneUser() {
+		String user_mid = null;
+		
+		try {
+			connection();
+			
+			String sql = "select user_mid from inte_tbl where manager_no in (select max(manager_no) from inte_tbl)";
+			psmt = conn.prepareStatement(sql);
+						
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				System.out.println("회원정보 불러오기 성공!");
+				
+				user_mid = rs.getString("user_mid");
+
+			}	
+				
+			} catch (Exception e) {
+				System.out.println("최신 데이터 조회 실패!");
+				e.getStackTrace();
+			}finally {
+				close();
+			}
+			return user_mid;
+		
+	}
+	
+
 	//alert_cnt 1로 돌려주는 메소드
 	public String Alert_cnt_1() {
+		String alert_cnt = null;
 		try {
 			connection();
 			
 			String sql = "update INTE_TBL set alert_cnt='1' where manager_no in (select max(manager_no) from inte_tbl)";
 			psmt = conn.prepareStatement(sql);
-									
+		
+			psmt.executeUpdate();
 		} catch (Exception e) {
 			System.out.println("수정 실패!");
 			e.printStackTrace();

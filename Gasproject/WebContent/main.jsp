@@ -29,38 +29,9 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 			ArrayList<localVO> locall = dao.localList();
 			String user_no = (String)session.getAttribute("user_no");
 			ArrayList<GasVO> gasall = dao.gascheck(user_no);
+			String user_mid = dao.gasOneUser();
 			%>
-			
-			<%--  boolean check = false;
-			int cnt=(int)session.getAttribute("gaslevel");
-			
-			if(cnt==1){
-				check=true;
-			}
-			
-				while(check){
-					for(GasVO vo3 : gasall){
-						String gaslevel = vo3.getGas_level();
-						double  level = Double.parseDouble(gaslevel);
-					 if(level > 20){
-					%>
-					 <script>
-					 	alert("유해가스 경보농도 노출!!");
-						window.location.href = "GasCheck.jsp";
-					</script>
-					<% 	}
-					 
-					}
-					check=false;
-					cnt=0;
-					}  --%>
 				
-			
-			
-			
-			
-			
-		
 	<!-- Wrapper -->
 	<div id="wrapper">
 
@@ -88,7 +59,7 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 			<li><h5>로그인</h5></li>
 			<form action="loginService" method="post" >
 				<li><input style="font-family: GmarketSansMedium;" name="admin_id" type="text" placeholder="ID을 입력하세요"></li>
-				<li><input style="font-family: GmarketSansMedium; margin-top : 16px; margin-bottom : 16px;" name="admin_pw" type="password"></li>
+				<li><input style="font-family: GmarketSansMedium; margin-top : 16px; margin-bottom : 16px;" name="admin_pw" type="password" placeholder="PW을 입력하세요"></li>
                 <li><input style="font-family: GmarketSansMedium;"type="submit" value="LogIn" class="button fit"></li>
 			</form>
 		</ul>
@@ -98,7 +69,8 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 
 				<li>
 				<input style="font-family: GmarketSansMedium; margin-bottom : 16px;" name="admin_id" id="input_email" type="text"
-					placeholder="ID을 입력하세요">  <input style="font-family: GmarketSansMedium;" type="button"><br> 
+					placeholder="ID을 입력하세요">   <input style="font-family: GmarketSansMedium;" type="button"
+               value="ID중복체크" onclick="emailCheck()"><br> 
 					<span id="sp_result"></span></li>
 				<li><input style="font-family: GmarketSansMedium;"name="admin_pw" type="password"
 					placeholder="PW를 입력하세요"></li>
@@ -248,7 +220,7 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 				});
 			}
 			
-			if(vo2!=null){
+			<% if(vo2!=null){ %>
 			function gascheck() {	
 				setInterval(() => {
 					$.ajax({
@@ -260,9 +232,11 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 							/* alert(data) */
 							
 							if(data=="0"){
-								alert("유해가스 경보농도 노출!!");
-								window.location.href = "GasCheck.jsp";
-							}else{
+								let check = confirm("<%=user_mid%>" + "번의 기기에서 유해가스의 농도가 노출되었습니다!!");
+								if(check){
+									window.location.href = "myMember.jsp";
+								}
+								// =============
 								
 							}
 						},
@@ -270,9 +244,28 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 							alert("통신 실패")
 						}
 					});
-				}, 1000);
+					
+					//=======
+					$.ajax({
+						type : "get", //데이터 전송 요청 방식
+						/* data : {"email" : input.value}, //전송하는 데이터 */
+						url : "transeService", //데이터를 전송, 요청하는 서버 페이지
+						dataType : "text", //응답데이터의 형식
+						data : {'data' : '통신 성공'},
+						success : function(data){ //통신 성공
+							console.log(data)
+						},
+						error : function(){ //통신 실패
+							alert("통신 실패")
+						}
+					});
+					
+					
+				}, 3000);
 				
-			}}
+			}
+			gascheck();
+			<% } %>
 			
 			
 			</script>
