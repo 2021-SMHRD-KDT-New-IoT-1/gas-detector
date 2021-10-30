@@ -29,28 +29,36 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 			ArrayList<localVO> locall = dao.localList();
 			String user_no = (String)session.getAttribute("user_no");
 			ArrayList<GasVO> gasall = dao.gascheck(user_no);
-			
-			boolean check = true;
-			
-			while(check){
-			for(GasVO vo3 : gasall){
-				String gaslevel = vo3.getGas_level();
-				double  level = Double.parseDouble(gaslevel);
-			 if(level > 20){
 			%>
-			 <script>
-			 	alert("유해가스 경보농도 노출!!");
-				window.location.href = "GasCheck.jsp";
-			</script>
-			<% 	}
-			 check = false;
-			}
+			
+			<%--  boolean check = false;
+			int cnt=(int)session.getAttribute("gaslevel");
+			
+			if(cnt==1){
+				check=true;
 			}
 			
-			/* if(){
-				check = true;
-			} */
-			%>
+				while(check){
+					for(GasVO vo3 : gasall){
+						String gaslevel = vo3.getGas_level();
+						double  level = Double.parseDouble(gaslevel);
+					 if(level > 20){
+					%>
+					 <script>
+					 	alert("유해가스 경보농도 노출!!");
+						window.location.href = "GasCheck.jsp";
+					</script>
+					<% 	}
+					 
+					}
+					check=false;
+					cnt=0;
+					}  --%>
+				
+			
+			
+			
+			
 			
 		
 	<!-- Wrapper -->
@@ -75,12 +83,12 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 		</header>
 
 		<!-- Menu -->
-		<nav id="menu" style="font-family: GmarketSansMedium; margin-right:0;">
+		<nav id="menu" style="font-family: GmarketSansMedium; ">
 		<ul class="links">
 			<li><h5>로그인</h5></li>
 			<form action="loginService" method="post" >
 				<li><input style="font-family: GmarketSansMedium;" name="admin_id" type="text" placeholder="ID을 입력하세요"></li>
-				<li><input style="font-family: GmarketSansMedium;" name="admin_pw" type="password"
+				<li><input style="font-family: GmarketSansMedium; margin-top : 16px; margin-bottom : 16px;" name="admin_pw" type="password"
 					placeholder="PW를 입력하세요"></li>
 				<li><input type="submit" value="LogIn" class="button fit"></li>
 			</form>
@@ -88,7 +96,7 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 		<ul class="actions vertical">
 			<li><h5>회원가입</h5></li>
 			<form action="JoinService" method="post">
-				<li><input style="font-family: GmarketSansMedium;" name="admin_id" id="input_email" type="text"
+				<li><input style="font-family: GmarketSansMedium; margin-bottom : 16px;" name="admin_id" id="input_email" type="text"
 					placeholder="ID을 입력하세요"> <input type="button"
 					value="ID중복체크" onclick="emailCheck()"><br> <span
 					id="sp_result"></span></li>
@@ -240,7 +248,31 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 				});
 			}
 			
-			
+			if(vo2!=null){
+			function gascheck() {	
+				setInterval(() => {
+					$.ajax({
+						type : "get",
+						/* data : {"email" : input.value}, //전송하는 데이터 */
+						url : "oneSelectGas", //데이터를 전송, 요청하는 서버 페이지
+						dataType : "text", //응답데이터의 형식
+						success : function(data){ //통신 성공
+							/* alert(data) */
+							
+							if(data=="0"){
+								alert("유해가스 경보농도 노출!!");
+								window.location.href = "GasCheck.jsp";
+							}else{
+								
+							}
+						},
+						error : function(){ //통신 실패
+							alert("통신 실패")
+						}
+					});
+				}, 1000);
+				
+			}}
 			
 			
 			</script>
