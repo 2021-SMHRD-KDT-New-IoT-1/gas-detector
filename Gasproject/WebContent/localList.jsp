@@ -49,7 +49,7 @@
 							
 						</table>
 						<table>
-							<input type="submit" value="HOME" onclick='window.location.href="main.jsp"'>
+							<input style="font-family: GmarketSansMedium;"type="submit" value="HOME" onclick='window.location.href="main.jsp"'>
 						</table>
 					</nav>			
 			</div>

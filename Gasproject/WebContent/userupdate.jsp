@@ -50,11 +50,11 @@
 									<table>
 									
 										<tr>
-										<input type="submit" value="UPDATE" class="button fit" style="width: 300px; margin: 0 auto;">
+										<input type="submit" value="UPDATE" class="button fit" style="width: 300px; margin: 0 auto;font-family: GmarketSansMedium;">
 										</tr>
 										
 										<tr>
-										<input type="button" value=" BACK " style="margin:20px;" onclick='window.location.href="selectMember.jsp"'>
+										<input type="button" value=" BACK " style="margin:20px;font-family: GmarketSansMedium;" onclick='window.location.href="selectMember.jsp"'>
 										</tr>
 									</table>
 									
