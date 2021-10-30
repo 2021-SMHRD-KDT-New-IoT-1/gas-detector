@@ -163,11 +163,11 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 		<footer id="footer">
 		<div class="inner" style="font-family: GmarketSansMedium;">
 			<ul class="icons" >
-				<li ><a href="#" ><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></li>
-				<li><a href="#" ><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a></li>
-				<li><a href="#" ><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</a></li>
-				<li><a href="#" ><i class="fa fa-github-alt" aria-hidden="true"></i> GitHub</a></li>
-				<li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i> LinkedIn</a></li>
+				<li><a href="https://www.kogas.or.kr:9450/portal/index.do" ><i class="fa fa-smile-o" aria-hidden="true"></i> 한국가스공사</a></li>
+				<li><a href="https://www.youtube.com/c/MYKOGAS" ><i class="fa fa-youtube-play" aria-hidden="true"></i> 한국가스공사 YOUTUBE</a></li>
+				<li ><a href="http://www.119.go.kr/Center119/main.do" ><i class="fa fa-fire-extinguisher" aria-hidden="true"></i> 119 안전신고센터</a></li>
+				<li><a href="https://www.police.go.kr/index.do" ><i class="fa fa-taxi" aria-hidden="true"></i> 경찰청</a></li>
+				
 			</ul>
 			<ul class="copyright" style="font-family: GmarketSansMedium;">
 				<li>&copy; Untitled</li>
