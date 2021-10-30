@@ -48,8 +48,8 @@
 								   </li> 
 									<!-- <li><input name="user_no" type="text"    placeholder="관리 사용자 번호를 입력하세요" style="width: 500px; margin: 0 auto;"></li> -->
 									<li>
-									<input type="submit" value="Update" class="button fit" style="width: 250px; margin: 10px;">
-									<input type="button" value="HOME" onclick='window.location.href="main.jsp"'>
+									<input type="submit" value="Update" class="button fit" style="width: 250px; margin: 10px;font-family: GmarketSansMedium;">
+									<input type="button" value="HOME" style="font-family: GmarketSansMedium;" onclick='window.location.href="main.jsp"'>
 									</li>
 									
 									

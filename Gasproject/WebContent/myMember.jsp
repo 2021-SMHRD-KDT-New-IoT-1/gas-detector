@@ -62,7 +62,7 @@
                         </table>
                      <table>
 							<tr>
-							<input type="button" value=" HOME " style="margin:20px;" onclick='window.location.href="main.jsp"'>
+							<input type="button" value=" HOME " style="margin:20px;font-family: GmarketSansMedium;" onclick='window.location.href="main.jsp"'>
 							</tr>
 							
 							<!-- <tr><form action="userupdate.jsp">

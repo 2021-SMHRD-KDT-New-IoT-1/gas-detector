@@ -60,15 +60,15 @@
                         </table>
                      <table>
 							<tr>
-							<input type="button" value=" HOME " style="margin:20px;" onclick='window.location.href="main.jsp"'>
+							<input type="button" value=" HOME " style="margin:20px;font-family: GmarketSansMedium;" onclick='window.location.href="main.jsp"'>
 							</tr>
 							
 							<tr><form action="userupdate.jsp">
-							<input type="submit" value=" USER UPDATE " style="margin:20px;" >
+							<input type="submit" value=" USER UPDATE " style="margin:20px;font-family: GmarketSansMedium;" >
 							</form></tr>
 							
 							<tr><form action="userJoin.jsp">
-							<input type="submit" value=" ADD MEMBER " style="margin:20px;">
+							<input type="submit" value=" ADD MEMBER " style="margin:20px;font-family: GmarketSansMedium;">
 							</form></tr>
 						</table>
 					</nav>			

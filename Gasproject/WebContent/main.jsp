@@ -88,18 +88,18 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 			<li><h5>로그인</h5></li>
 			<form action="loginService" method="post" >
 				<li><input style="font-family: GmarketSansMedium;" name="admin_id" type="text" placeholder="ID을 입력하세요"></li>
-				<li><input style="font-family: GmarketSansMedium; margin-top : 16px; margin-bottom : 16px;" name="admin_pw" type="password"
-					placeholder="PW를 입력하세요"></li>
-				<li><input type="submit" value="LogIn" class="button fit"></li>
+				<li><input style="font-family: GmarketSansMedium; margin-top : 16px; margin-bottom : 16px;" name="admin_pw" type="password"></li>
+                <li><input style="font-family: GmarketSansMedium;"type="submit" value="LogIn" class="button fit"></li>
 			</form>
 		</ul>
 		<ul class="actions vertical">
 			<li><h5>회원가입</h5></li>
 			<form action="JoinService" method="post">
-				<li><input style="font-family: GmarketSansMedium; margin-bottom : 16px;" name="admin_id" id="input_email" type="text"
-					placeholder="ID을 입력하세요"> <input type="button"
-					value="ID중복체크" onclick="emailCheck()"><br> <span
-					id="sp_result"></span></li>
+
+				<li>
+				<input style="font-family: GmarketSansMedium; margin-bottom : 16px;" name="admin_id" id="input_email" type="text"
+					placeholder="ID을 입력하세요">  <input style="font-family: GmarketSansMedium;" type="button"><br> 
+					<span id="sp_result"></span></li>
 				<li><input style="font-family: GmarketSansMedium;"name="admin_pw" type="password"
 					placeholder="PW를 입력하세요"></li>
 				<li><input style="font-family: GmarketSansMedium;"name="admin_name" type="text"
@@ -109,13 +109,13 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 				<li><input style="font-family: GmarketSansMedium;"name="admin_email" type="text"
 					placeholder="Email을 입력하세요"></li>
 				<li><input style="font-family: GmarketSansMedium;"name="admin_job" type="text" placeholder="소속을 입력하세요"></li>
-				<!--  <li><input name="loc_no" type="text" placeholder="관리 지역번호를 입력하세요" ></li>  -->
+				
 				<li><select name="loc_no" style="font-family: GmarketSansMedium;">
 						<%for(localVO vo4 : locall){%>
 						<option name="loc" style="color:black;font-family: GmarketSansMedium;"><%=vo4.getLoc_name()%>/<%=vo4.getLoc_no()%></option>
 						<%}%>
 				</select></li>
-				<li><input type="submit" value="Join Us" class="button fit"></li>
+				<li><input style="font-family: GmarketSansMedium;"type="submit" value="Join Us" class="button fit"></li>
 			</form>
 		</ul>
 		</nav>

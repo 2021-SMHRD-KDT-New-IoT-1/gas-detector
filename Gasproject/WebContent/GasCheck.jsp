@@ -67,7 +67,7 @@
 												
 						<table>		
 						<tr>
-						<input type="button" value=" BACK " style="margin:20px;" onclick='window.location.href="myMember.jsp"'>
+						<input type="button" value=" BACK " style="margin:20px;font-family: GmarketSansMedium;" onclick='window.location.href="myMember.jsp"'>
 						</tr>
 						</table>
 					</nav>			
