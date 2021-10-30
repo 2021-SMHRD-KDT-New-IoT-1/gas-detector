@@ -1,3 +1,4 @@
+<%@page import="com.model.GasVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.model.MemberDAO"%>
 <%@page import="com.model.localVO"%>
@@ -21,14 +22,37 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 </head>
 
 <body>
-	<%
+			<%
 			//현재 로그인 상태인지 확인 (vo == null > 로그인 하지 않은 상태)
 			AdminMemberVO vo2 = (AdminMemberVO)session.getAttribute("member");
 			MemberDAO dao = new MemberDAO();
 			ArrayList<localVO> locall = dao.localList();
+			String user_no = (String)session.getAttribute("user_no");
+			ArrayList<GasVO> gasall = dao.gascheck(user_no);
 			
-		    		
-		%>
+			boolean check = true;
+			
+			while(check){
+			for(GasVO vo3 : gasall){
+				String gaslevel = vo3.getGas_level();
+				double  level = Double.parseDouble(gaslevel);
+			 if(level > 20){
+			%>
+			 <script>
+			 	alert("유해가스 경보농도 노출!!");
+				window.location.href = "GasCheck.jsp";
+			</script>
+			<% 	}
+			 check = false;
+			}
+			}
+			
+			/* if(){
+				check = true;
+			} */
+			%>
+			
+		
 	<!-- Wrapper -->
 	<div id="wrapper">
 
@@ -215,6 +239,9 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 					}
 				});
 			}
+			
+			
+			
 			
 			</script>
 
