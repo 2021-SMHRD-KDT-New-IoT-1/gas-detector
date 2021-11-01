@@ -40,14 +40,14 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 		<a href="main.jsp" class="logo" style="font-family: GmarketSansMedium;"><strong>Gas</strong> <span>detector</span></a> 
 		<nav>
 		<% if(vo2==null){%> 
-		<a href="#menu" style="font-family: GmarketSansMedium;" >로그인</a> 
+		<a href="#menu" style="font-family: GmarketSansMedium;" >로그인 / 회원가입</a> 
 		<%}else{ %> 
 		
-		<a href="localList.jsp" style="font-family: GmarketSansMedium;" class="btn1">관리지역목록</a> 
-		<a href="myMember.jsp" style="font-family: GmarketSansMedium;" class="btn2">관리사용자목록</a>
-		<a href="selectMember.jsp" style="font-family: GmarketSansMedium;" class="btn3">전체사용자목록</a>
-		<a href="update.jsp" style="font-family: GmarketSansMedium;" class="btn4">개인정보수정</a>
-		<a href="logoutService" style="font-family: GmarketSansMedium;" class="btn5">로그아웃</a> 
+		<a href="localList.jsp" style="font-family: GmarketSansMedium; height: 50px;" class="btn1">관리지역목록</a> 
+		<a href="myMember.jsp" style="font-family: GmarketSansMedium; height: 50px;" class="btn2">관리사용자목록</a>
+		<a href="selectMember.jsp" style="font-family: GmarketSansMedium; height: 50px;" class="btn3">전체사용자목록</a>
+		<a href="update.jsp" style="font-family: GmarketSansMedium; height: 50px;" class="btn4">개인정보수정</a>
+		<a href="logoutService" style="font-family: GmarketSansMedium; height: 50px;" class="btn5">로그아웃</a> 
 		
 		<%} %>
 		</nav> 
@@ -103,10 +103,9 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 			<%}else{%>
 			<h2 style="font-family: GmarketSansMedium;">
 				관리자,
-				<%= vo2.getAdmin_id() %>님 환영합니다.
+				<%= vo2.getAdmin_name() %>님 환영합니다.
 				<br>
-			<%= vo2.getAdmin_id() %>님이 관리하고 있는 지역은
-<%out.print(dao.localName(vo2.getLoc_no()));%>입니다.
+			<%= vo2.getAdmin_name() %>님이 관리하고 있는 지역은 <%out.print(dao.localName(vo2.getLoc_no()));%>입니다.
 			</h2>
 			<%}%> 
 			</header>
