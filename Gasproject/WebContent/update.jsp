@@ -21,6 +21,8 @@
 		AdminMemberVO vo2 = (AdminMemberVO)session.getAttribute("member");
 		MemberDAO dao = new MemberDAO();
 		ArrayList<localVO> locall = dao.localList();
+		
+		String user_mid = dao.gasOneUser();
 	%>
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -64,7 +66,55 @@
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
+			<script>
+			<% if(vo2!=null){ %>
+			function gascheck() {	
+				setInterval(() => {
+					$.ajax({
+						type : "get",
+						/* data : {"email" : input.value}, //전송하는 데이터 */
+						url : "oneSelectGas", //데이터를 전송, 요청하는 서버 페이지
+						dataType : "text", //응답데이터의 형식
+						success : function(data){ //통신 성공
+							/* alert(data) */
+							
+							if(data=="0"){
+								let check = confirm("<%=user_mid%>" + "번의 기기에서 유해가스의 농도가 노출되었습니다!!");
+								if(check){
+									window.location.href = "myMember.jsp";
+								}
+								// =============
+								
+							}
+						},
+						error : function(){ //통신 실패
+							alert("통신 실패")
+						}
+					});
+					
+					//=======
+					$.ajax({
+						type : "get", //데이터 전송 요청 방식
+						/* data : {"email" : input.value}, //전송하는 데이터 */
+						url : "transeService", //데이터를 전송, 요청하는 서버 페이지
+						dataType : "text", //응답데이터의 형식
+						data : {'data' : '통신 성공'},
+						success : function(data){ //통신 성공
+							console.log(data)
+						},
+						error : function(){ //통신 실패
+							alert("통신 실패")
+						}
+					});
+					
+					
+				}, 3000);
+				
+			}
+			gascheck();
+			<% } %>
+			
+			</script>
 	</body>
 </html>
 
