@@ -26,8 +26,9 @@ public class updateService extends HttpServlet {
 		//수정에 사용할 정보
 		String admin_pw = request.getParameter("admin_pw");
 		String admin_name = request.getParameter("admin_name");
-		String admin_tel = request.getParameter("admin_tel");
 		String admin_email = request.getParameter("admin_email");
+		String admin_tel = request.getParameter("admin_tel");
+		
 		String admin_job = request.getParameter("admin_job");
 		String loc_no = request.getParameter("loc_no");
 		// String user_no = request.getParameter("user_no");

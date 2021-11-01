@@ -36,15 +36,15 @@ public class AdminMemberVO {
 
 
 
-	public AdminMemberVO(String admin_no, String admin_id, String admin_name, String admin_tel, String admin_email, String admin_job, String loc_no) {
+	public AdminMemberVO(String admin_pw, String admin_name, String admin_tel, String admin_email,  String admin_job, String loc_no, String admin_id) {
 		super();
-		this.admin_no = admin_no;
-		this.admin_id = admin_id;
+		this.admin_pw = admin_pw;
 		this.admin_name = admin_name;
-		this.admin_email = admin_email;
 		this.admin_tel = admin_tel;
+		this.admin_email = admin_email;
 		this.admin_job = admin_job;
 		this.loc_no = loc_no;
+		this.admin_id = admin_id;
 	}
 	
 	
@@ -56,8 +56,8 @@ public class AdminMemberVO {
 		this.admin_id = admin_id;
 		this.admin_pw = admin_pw;
 		this.admin_name = admin_name;
-		this.admin_tel = admin_tel;
 		this.admin_email = admin_email;
+		this.admin_tel = admin_tel;
 		this.admin_job = admin_job;
 		this.loc_no = loc_no;
 		
