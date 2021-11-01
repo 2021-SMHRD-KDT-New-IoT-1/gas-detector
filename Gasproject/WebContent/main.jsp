@@ -221,7 +221,7 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 			
 			<% if(vo2!=null){ %>
 			function gascheck() {	
-				setInterval(() => {
+				setInterval() => {
 					$.ajax({
 						type : "get",
 						/* data : {"email" : input.value}, //전송하는 데이터 */
