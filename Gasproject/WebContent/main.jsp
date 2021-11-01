@@ -40,7 +40,7 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 		<a href="main.jsp" class="logo" style="font-family: GmarketSansMedium;"><strong>Gas</strong> <span>detector</span></a> 
 		<nav>
 		<% if(vo2==null){%> 
-		<a href="#menu" style="font-family: GmarketSansMedium;" >로그인</a> 
+		<a href="#menu" style="font-family: GmarketSansMedium;" >로그인 / 회원가입</a> 
 		<%}else{ %> 
 		
 		<a href="localList.jsp" style="font-family: GmarketSansMedium; height: 50px;" class="btn1">관리지역목록</a> 

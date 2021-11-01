@@ -45,7 +45,7 @@
 									<table>
 									
 										<tr>
-										<input type="submit" value="Update" class="button fit" style="width: 300px; margin: 0 auto;font-family: GmarketSansMedium;">
+										<input type="submit" value="USER JOIN" class="button fit" style="width: 300px; margin: 0 auto;font-family: GmarketSansMedium;">
 										</tr>
 										
 										<tr>
