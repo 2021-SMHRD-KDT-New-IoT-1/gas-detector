@@ -95,7 +95,7 @@ public class MemberDAO {
 		try {
 			connection();
 			
-			String sql = "select admin_no, admin_id, admin_email, admin_tel, admin_job, loc_no from ADMIN_MEMBER where admin_id=? and admin_pw=?";
+			String sql = "select admin_no, admin_id, admin_name, admin_email, admin_tel, admin_job, loc_no from ADMIN_MEMBER where admin_id=? and admin_pw=?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, admin_id);	
 			psmt.setString(2, admin_pw);		
@@ -106,12 +106,14 @@ public class MemberDAO {
 				System.out.println("로그인 성공!");
 				String get_admin_no = rs.getString("admin_no");
 				String get_admin_id = rs.getString("admin_id");
+				String get_admin_name = rs.getString("admin_name");
 				String get_email = rs.getString("admin_email");
 				String get_tel = rs.getString("admin_tel");
 				String get_job = rs.getString("admin_job");
 				String get_loc_no= rs.getString("loc_no");
 				
-				vo2 = new AdminMemberVO(get_admin_no, get_admin_id, get_email, get_tel, get_job, get_loc_no);
+				
+				vo2 = new AdminMemberVO(get_admin_no, get_admin_id, get_admin_name, get_email, get_tel, get_job, get_loc_no);
 						
 			}else {
 				System.out.println("로그인 실패!");

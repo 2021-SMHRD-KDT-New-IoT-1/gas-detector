@@ -103,10 +103,9 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 			<%}else{%>
 			<h2 style="font-family: GmarketSansMedium;">
 				관리자,
-				<%= vo2.getAdmin_id() %>님 환영합니다.
+				<%= vo2.getAdmin_name() %>님 환영합니다.
 				<br>
-			<%= vo2.getAdmin_id() %>님이 관리하고 있는 지역은
-<%out.print(dao.localName(vo2.getLoc_no()));%>입니다.
+			<%= vo2.getAdmin_name() %>님이 관리하고 있는 지역은 <%out.print(dao.localName(vo2.getLoc_no()));%>입니다.
 			</h2>
 			<%}%> 
 			</header>
