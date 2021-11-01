@@ -27,7 +27,7 @@ public class AdminMemberVO {
    }
 
    
-
+//
    public AdminMemberVO(String admin_no, String admin_name) {
       super();
       this.admin_no = admin_no;
@@ -35,7 +35,7 @@ public class AdminMemberVO {
    }
 
 
-
+//로그인 생성자
    public AdminMemberVO(String admin_no, String admin_id, String admin_email, String admin_tel,  String admin_job, String loc_no) {
       super();
       this.admin_no = admin_no;
@@ -46,7 +46,7 @@ public class AdminMemberVO {
       this.loc_no = loc_no;
    }
 
-
+//업데이트 생성자
    public AdminMemberVO(String admin_pw,String admin_name, String admin_tel, String admin_email, String admin_job, String loc_no, String admin_id) {
       super();
       this.admin_pw = admin_pw;
