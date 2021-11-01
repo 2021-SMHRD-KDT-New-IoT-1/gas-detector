@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.model.MemberDAO;
 
@@ -21,8 +22,12 @@ public class GetSensor extends HttpServlet {
 		MemberDAO dao = new MemberDAO();
 		int cnt = dao.InsertSensor(gas_level, user_mid); 
 		
-  if(cnt>0) {
-	  System.out.println("성공!");
-  }
+	  if(cnt>0) {
+		  System.out.println("성공!");
+		  
+		  
+			
+		  
+	  }
 }
 }
