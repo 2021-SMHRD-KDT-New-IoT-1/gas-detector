@@ -26,9 +26,8 @@ public class updateService extends HttpServlet {
 		//수정에 사용할 정보
 		String admin_pw = request.getParameter("admin_pw");
 		String admin_name = request.getParameter("admin_name");
-		String admin_email = request.getParameter("admin_email");
 		String admin_tel = request.getParameter("admin_tel");
-		
+		String admin_email = request.getParameter("admin_email");
 		String admin_job = request.getParameter("admin_job");
 		String loc_no = request.getParameter("loc_no");
 		// String user_no = request.getParameter("user_no");
@@ -41,7 +40,7 @@ public class updateService extends HttpServlet {
 		if(cnt>0) {
 			System.out.println("수정 성공");
 			
-			vo2 = new AdminMemberVO(admin_pw, admin_name, admin_tel, admin_email, admin_job, result, admin_job);
+			vo2 = new AdminMemberVO(admin_pw, admin_name, admin_tel, admin_email, admin_job, result, admin_id);
 			session.setAttribute("member", vo2); //수정한 값으로 업뎃
 			
 			response.sendRedirect("main.jsp");
