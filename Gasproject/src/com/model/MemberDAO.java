@@ -129,7 +129,7 @@ public class MemberDAO {
 	}
 	
 	//수정 메소드
-	public int update(String admin_pw, String admin_name, String admin_tel, String admin_email, String admin_job, String admin_id, String result) {
+	public int update(String admin_pw, String admin_name, String admin_tel, String admin_email, String admin_job, String result, String admin_id) {
 		try {
 			connection();
 			

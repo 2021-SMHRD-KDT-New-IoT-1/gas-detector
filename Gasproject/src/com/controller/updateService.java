@@ -35,12 +35,12 @@ public class updateService extends HttpServlet {
 		String result = loc_no.substring(loc_no.lastIndexOf("/")+1);
 					
 		MemberDAO dao = new MemberDAO();
-		int cnt = dao.update(admin_pw, admin_name, admin_tel, admin_email, admin_job, admin_id, result);
+		int cnt = dao.update(admin_pw, admin_name, admin_tel, admin_email, admin_job, result, admin_id);
 		
 		if(cnt>0) {
 			System.out.println("수정 성공");
 			
-			vo2 = new AdminMemberVO(admin_id, admin_pw, admin_name, admin_tel, admin_email, admin_job, result);
+			vo2 = new AdminMemberVO(admin_pw, admin_name, admin_tel, admin_email, admin_job, result, admin_job);
 			session.setAttribute("member", vo2); //수정한 값으로 업뎃
 			
 			response.sendRedirect("main.jsp");
