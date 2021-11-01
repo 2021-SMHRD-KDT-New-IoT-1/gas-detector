@@ -1,14 +1,12 @@
-<%@page import="com.model.AdminMemberVO"%>
-<%@page import="com.model.UserMemberVO"%>
-<%@page import="java.util.ArrayList"%>
 <%@page import="com.model.MemberDAO"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@page import="com.model.AdminMemberVO"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html style=" margin-left: 200px; margin-right: 200px;">
+<html>
 	<head>
 		<title>Forty by HTML5 UP</title>
-		<meta charset="utf-8" />
+		<meta charset="EUC-KR" />
 		<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -17,64 +15,27 @@
 		
 	</head>
 	<style>
-		
+		#Update > ul.actions {
+			margin-top:10%;
+		}
 	</style>
 	<body style="text-align: center; background : radial-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8)), url(images/색상.png);">
 		<%
+			String admin_id = (String)request.getAttribute("admin_id");
 			MemberDAO dao = new MemberDAO();
 			AdminMemberVO vo2 = (AdminMemberVO)session.getAttribute("member");
-		 	ArrayList<UserMemberVO> myMember = dao.myMember(vo2.getAdmin_no());
-		 	
 			String user_mid = dao.gasOneUser();
-			
+		
 		%>
 		<!-- Wrapper -->
 			<div id="wrapper">
 				<!-- Menu -->
 					<nav id="Update" style="font-family: GmarketSansMedium;">	
-						<table>
-							
-							<caption><h2>MY 사용자 확인 페이지</h2></caption>
-						
-							<tr>
-								<td>회원번호</td>
-								<td>이름</td>
-								<td>연락처</td>
-								<td>주소</td>
-								<td>기기번호</td>
-								<td>관리자번호</td>
-								<td>CO</td>	
-								<td></td>
-														
-							</tr>
-							
-						<%
-						for(UserMemberVO vo : myMember){
-													%>
-                         <tr>
-                          <td><%=vo.getUser_no() %></td>
-                          <td><%=vo.getUser_name() %></td>
-                          <td><%=vo.getUser_tel() %></td> 
-                          <td><%=vo.getUser_add() %></td> 
-                          <td><%=vo.getUser_mid() %></td> 
-                          <td><%=vo.getAdmin_no() %></td> 
-                          <td><a href= "GasCheckService?user_no=<%=vo.getUser_no() %>">현황 확인</a></td>
-                        <%}%>
-                        
-                        </table>
-                     <table>
-							<tr>
-							<input type="button" value=" HOME " style="margin:20px;font-family: GmarketSansMedium;" onclick='window.location.href="main.jsp"'>
-							</tr>
-							
-							<!-- <tr><form action="userupdate.jsp">
-							<input type="submit" value=" MY USER UPDATE " style="margin:20px;" >
-							</form></tr>
-							
-							<tr><form action="userJoin.jsp">
-							<input type="submit" value=" MY ADD MEMBER " style="margin:20px;"> 
-							</form></tr> -->
-						</table>
+						<ul class="actions vertical">
+							<li><h1>감사합니다!</h1></li>
+							<li>신고 완료되었습니다.</li>
+							<li><a href="main.jsp">메인페이지</a></li>
+						</ul>
 					</nav>			
 			</div>
 		<!-- Scripts -->
