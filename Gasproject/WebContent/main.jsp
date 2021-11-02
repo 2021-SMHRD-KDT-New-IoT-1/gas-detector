@@ -32,7 +32,7 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 			String user_mid = dao.gasOneUser();
 			%>
 				
-	<!-- Wrapper -->
+	<!-- Wrapper !!-->
 	<div id="wrapper">
 
 		<!-- Header -->
