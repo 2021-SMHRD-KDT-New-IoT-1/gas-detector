@@ -214,7 +214,7 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 						}
 					},
 					error : function(){ //통신 실패
-						alert("통신 실패")
+						
 					}
 				});
 			}
@@ -240,7 +240,7 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 							}
 						},
 						error : function(){ //통신 실패
-							alert("통신 실패")
+							
 						}
 					});
 					
@@ -255,12 +255,12 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 							console.log(data)
 						},
 						error : function(){ //통신 실패
-							alert("통신 실패")
+							
 						}
 					});
 					
 					
-				}, 3000);
+				}, 1000);
 				
 			}
 			gascheck();

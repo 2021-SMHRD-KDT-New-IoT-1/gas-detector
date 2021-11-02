@@ -67,7 +67,7 @@
 							}
 						},
 						error : function(){ //통신 실패
-							alert("통신 실패")
+							
 						}
 					});
 					
@@ -82,12 +82,12 @@
 							console.log(data)
 						},
 						error : function(){ //통신 실패
-							alert("통신 실패")
+							
 						}
 					});
 					
 					
-				}, 3000);
+				}, 1000);
 				
 			}
 			gascheck();
