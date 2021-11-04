@@ -37,7 +37,7 @@ href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/font
 
 		<!-- Header -->
 		<header id="header" class="alt"> 
-		<a href="main.jsp" class="logo" style="font-family: GmarketSansMedium;"><span style='font-size:20px'>aegis</span></a> 
+		<a href="main.jsp" class="logo" style="font-family: GmarketSansMedium;"><span style='font-size:20px'>aezis</span></a> 
 		<nav>
 		<% if(vo2==null){%> 
 		<a href="#menu" style="font-family: GmarketSansMedium;" >로그인 / 회원가입</a> 
